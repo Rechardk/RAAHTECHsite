@@ -1,41 +1,79 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>RAAHTECH | Rechard Keith</title>
   <link rel="icon" type="image/x-icon" href="favicon.ico" />
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    body.dark {
+      background-color: #0f0f0f;
+      color: white;
     }
-    .animate-fade-in-up { animation: fadeInUp 1s ease-out forwards; }
+    .glass {
+      backdrop-filter: blur(10px);
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+    .dark .glass {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
   </style>
 </head>
-<body class="bg-white text-black min-h-screen flex items-center justify-center px-6 relative">
+<body class="bg-white text-black transition-colors duration-300">
 
-  <!-- Abstract floating blob -->
-  <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 opacity-10">
-    <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_kxsd2ytq.json" background="transparent" speed="1" loop autoplay style="width: 100%; height: 100%;"></lottie-player>
-  </div>
+  <!-- Header with dark toggle -->
+  <header class="glass p-4 fixed top-0 left-0 right-0 z-50 flex justify-between items-center backdrop-blur-md shadow-md">
+    <div class="flex items-center gap-3">
+      <img src="RAAH_logo_transparent.png" alt="RAAHTECH Logo" class="w-10 h-10 grayscale">
+      <h1 class="font-bold tracking-wide text-lg">RAAHTECH</h1>
+    </div>
+    <button onclick="toggleDarkMode()" class="border px-3 py-1 rounded text-sm hover:bg-black hover:text-white dark:border-white">Toggle Theme</button>
+  </header>
 
-  <!-- Main content -->
-  <main class="text-center z-10 animate-fade-in-up">
-    <img src="RAAH_logo_transparent.png" alt="RAAHTECH Logo" class="w-16 h-16 mx-auto mb-3 grayscale">
-    <h1 class="text-4xl font-extrabold mb-2 tracking-wide">RAAHTECH</h1>
-    <p class="text-base text-gray-700 mb-4 max-w-xl mx-auto">Cybersecurity meets creative innovation. We protect what you build and help you design what’s next.</p>
-    <p class="italic text-gray-500 mb-8">"Where vision becomes form — and stays secure."</p>
+  <!-- Spacer -->
+  <div class="h-20"></div>
+
+  <!-- Hero -->
+  <main class="text-center px-6 py-20" data-aos="fade-up">
+    <h2 class="text-4xl font-extrabold mb-4">Cybersecurity meets creative innovation.</h2>
+    <p class="text-md text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
+      We protect what you build and help you design what’s next — blending security, creativity, and intelligent systems to push your ideas into form.
+    </p>
+    <p class="italic text-gray-500 mb-10">"Where vision becomes form — and stays secure."</p>
     <div class="flex flex-wrap justify-center gap-4">
-      <a href="https://rechardk.github.io/portfolio/" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition">Portfolio</a>
-      <a href="https://www.linkedin.com/in/rechardkeith" target="_blank" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition">LinkedIn</a>
-      <a href="mailto:rechardkeith@outlook.com" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition">Contact</a>
-      <a href="https://soundcloud.com/prince_raa" target="_blank" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition">SoundCloud</a>
+      <a href="https://rechardk.github.io/portfolio/" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">Portfolio</a>
+      <a href="https://www.linkedin.com/in/rechardkeith" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">LinkedIn</a>
+      <a href="mailto:rechardkeith@outlook.com" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">Contact</a>
+      <a href="https://soundcloud.com/prince_raa" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">SoundCloud</a>
     </div>
   </main>
+
+  <!-- Bio Section -->
+  <section class="px-6 py-20 max-w-4xl mx-auto text-center" data-aos="fade-up">
+    <h3 class="text-3xl font-bold mb-4">About Rechard Keith</h3>
+    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+      I'm a strategic builder and creative architect — blending cybersecurity, digital design, logistics, and culture into meaningful solutions.
+      Through my brand <strong>RAAHTECH</strong>, I help businesses and creators align their vision with high-performance, secure systems.
+      Whether it’s protecting your data, launching a product, or telling a story — I build experiences that move.
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="glass text-center py-6 text-sm text-gray-700 dark:text-gray-300 mt-10">
+    © 2025 Rechard Keith · RAAHTECH · Realign. Reclaim. Rise.
+  </footer>
+
+  <script>
+    AOS.init();
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+      document.documentElement.classList.toggle('dark');
+    }
+  </script>
 
 </body>
 </html>
