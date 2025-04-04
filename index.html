@@ -3,63 +3,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAAHTECH | Cybersecurity & Creative Tech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RaAH Technologies | Rechard Keith</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fdfcf9;
-      color: #111;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      text-align: center;
-    }
-    .logo {
-      font-size: 2.5rem;
-      font-weight: bold;
-      letter-spacing: 2px;
-      margin-bottom: 0.5rem;
-    }
-    .subtitle {
-      font-size: 1.1rem;
-      color: #555;
-      max-width: 500px;
-    }
-    .tagline {
-      font-style: italic;
-      margin: 1rem 0 2rem 0;
-      font-size: 1rem;
-      color: #666;
-    }
-    .links a {
-      text-decoration: none;
-      color: #222;
-      border: 1px solid #222;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      margin: 0 0.5rem;
-      transition: all 0.3s ease;
-    }
-    .links a:hover {
-      background-color: #222;
-      color: #fff;
+    ::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+    .glow-hover:hover {
+      box-shadow: 0 0 10px rgba(253, 186, 116, 0.6);
+      transform: scale(1.05);
     }
   </style>
 </head>
-<body>
-  <div class="logo">RAAHTECH</div>
-  <div class="subtitle">
-    Cybersecurity meets creative innovation. We protect what you build and help you design what’s next.
-  </div>
-  <div class="tagline">"Where vision becomes form — and stays secure."</div>
-  <div class="links">
-    <a href="https://rechardk.github.io/portfolio/" target="_blank">Portfolio</a>
-    <a href="https://www.linkedin.com/in/rechardkeith" target="_blank">LinkedIn</a>
-    <a href="mailto:hello@raaht.tech">Contact</a>
-  </div>
+<body class="bg-black text-white font-sans">
+
+  <!-- Header -->
+  <header class="bg-black py-6 px-6 flex flex-col items-center justify-center">
+    <img src="A_vector_graphic_logo_features_a_modern_emblem_cen.png" alt="RaAH Logo" class="w-20 h-20 mb-2">
+    <h1 class="text-3xl font-bold text-yellow-400">Rechard Keith</h1>
+    <p class="text-sm text-gray-400 uppercase tracking-widest mt-1">Realign. Reclaim. Rise.</p>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-16 px-6">
+    <h2 class="text-4xl font-extrabold text-yellow-400 mb-4">RaAH Technologies</h2>
+    <p class="text-lg text-gray-300 max-w-2xl mx-auto">
+      I build secure, scalable systems that blend vision, creativity, and strategy — from logistics and CRM tools to cyber solutions and creative tech.
+    </p>
+  </section>
+
+  <!-- Cyber Projects -->
+  <section id="cyber" class="px-6 py-16 max-w-5xl mx-auto">
+    <h3 class="text-3xl font-semibold mb-6">🛡️ Cybersecurity Projects</h3>
+    <div class="space-y-6">
+      <div class="bg-gray-900 p-5 rounded-xl shadow glow-hover transition">
+        <h4 class="text-xl font-semibold text-yellow-400">Secure CRM Development</h4>
+        <p class="text-gray-300">Built a secure CRM with role-based access and encryption for sensitive user data.</p>
+      </div>
+      <div class="bg-gray-900 p-5 rounded-xl shadow glow-hover transition">
+        <h4 class="text-xl font-semibold text-yellow-400">Vulnerability Assessment</h4>
+        <p class="text-gray-300">Performed internal network vulnerability scans with mitigation strategies.</p>
+      </div>
+      <div class="bg-gray-900 p-5 rounded-xl shadow glow-hover transition">
+        <h4 class="text-xl font-semibold text-yellow-400">Cloud & Network Security</h4>
+        <p class="text-gray-300">Deployed Azure firewalls and hardened configurations using Cisco best practices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Artistic Expression -->
+  <section id="soundcloud" class="px-6 py-16 bg-black text-center">
+    <h3 class="text-3xl font-semibold mb-4">🎵 Artistic Expression</h3>
+    <p class="text-gray-300 max-w-2xl mx-auto mb-6">
+      I express myself through creative storytelling and sound. Check out my musical works below:
+    </p>
+    <a href="https://soundcloud.com/prince_raa" target="_blank" class="text-yellow-400 underline text-lg">soundcloud.com/prince_raa</a>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-6 py-16 max-w-3xl mx-auto text-center">
+    <h3 class="text-3xl font-semibold mb-6">Let’s Build</h3>
+    <p class="text-gray-300 mb-2">📧 <a href="mailto:rechardkeith@outlook.com" class="underline text-yellow-400">rechardkeith@outlook.com</a></p>
+    <p class="text-gray-300">🔗 <a href="https://github.com/enterprises/RaAH" class="underline text-yellow-400" target="_blank">GitHub: RaAH</a></p>
+  </section>
+
+  <footer class="text-center py-6 text-gray-500 text-sm">
+    © 2025 Rechard Keith · RAAHTECH
+  </footer>
+
 </body>
 </html>
