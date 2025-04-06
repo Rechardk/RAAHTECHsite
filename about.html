@@ -4,21 +4,29 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | RAAHTECH</title>
-  <!-- Include your same styles or a shared CSS file -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
-    /* (You can copy the same CSS from index.html or link to an external style.css) */
-    /* For brevity, only minimal styling is shown here. */
-
-    body {
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #f5f5f5;
+      --accent: #c38c43;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
+      background-color: var(--bg-color);
+      color: var(--text-color);
     }
     header, footer {
       backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.05);
+      background-color: var(--glass);
       padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
@@ -27,10 +35,22 @@
     .logo img {
       height: 40px;
     }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo-text {
+      color: #fff;
+      margin-left: 0.5rem;
+    }
     nav a {
       margin-left: 1.5rem;
-      color: #c38c43;
+      color: var(--accent);
       text-decoration: none;
+    }
+    nav a:hover {
+      color: #fff;
     }
     .section {
       padding: 5vh 5vw;
@@ -38,52 +58,49 @@
       margin: 0 auto;
       text-align: center;
     }
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .about-us-content {
+      text-align: left;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .about-us-content h3 {
+      margin-top: 1.5rem;
+      font-size: 1.8rem;
+    }
+    footer div {
+      margin-bottom: 0.5rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
       <a href="index.html">
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <img src="images/RAAH_logo_transparent.png" alt="RAAHTECH Logo">
+        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo">
         <span class="logo-text"><strong>RAAHTECH</strong></span>
       </a>
     </div>
     <nav>
       <!-- Link back to the main site and founder page -->
-      <a href="about.html">About Us</a>
-      <a href="founder.html">Founder</a>
-
-      <!-- Links to sections within this page -->
-      <a href="#projects">Projects</a>
-      <a href="#services">Services</a>
-=======
-        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo">
-        <span style="color:#fff; margin-left:0.5rem;"><strong>RAAHTECH</strong></span>
-      </a>
-    </div>
-    <nav>
       <a href="index.html">Home</a>
       <a href="founder.html">Founder</a>
->>>>>>> parent of ddadcbf (v)
-=======
-        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo">
-        <span style="color:#fff; margin-left:0.5rem;"><strong>RAAHTECH</strong></span>
-      </a>
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="founder.html">Founder</a>
->>>>>>> parent of ddadcbf (v)
-      <a href="#contact">Contact</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
   </header>
 
   <!-- About Us Section -->
   <section class="section" data-aos="fade-up">
     <h2>About Us</h2>
-    <div class="about-us-content" style="text-align:left; max-width:800px; margin:0 auto;">
+    <div class="about-us-content">
       <h3>Our Story</h3>
       <p>
         RAAHTECH began with a simple ambition: to connect visionary thinking with
