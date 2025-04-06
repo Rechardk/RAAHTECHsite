@@ -11,10 +11,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
   <style>
     :root {
-      /* Updated color palette */
       --bg-color: #0f0f0f;
       --text-color: #f5f5f5;
       --accent: #c38c43;
@@ -22,27 +20,21 @@
       --tile-bg: #1a1a1a;
       --tile-border: #2e2e2e;
       --transition-speed: 0.3s;
-      /* Additional brand color if needed */
-      --brand-highlight: #ffbd59;
     }
-
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     html {
       scroll-behavior: smooth;
     }
-
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
       line-height: 1.6;
     }
-
     /* Fixed header for easy navigation */
     header {
       position: fixed;
@@ -56,16 +48,14 @@
       align-items: center;
       z-index: 1000;
     }
+    .logo img {
+      height: 40px;
+      width: auto;
+    }
     .logo a {
       display: flex;
       align-items: center;
       text-decoration: none;
-    }
-    .logo img {
-      height: 40px;
-      width: auto;
-      /* Use lazy loading for images where possible */
-      /* (Note: Some browsers may not fully support lazy for images in CSS) */
     }
     .logo-text {
       color: #ffffff;
@@ -80,7 +70,6 @@
     nav a:hover {
       color: #fff;
     }
-
     /* Hero Section */
     .hero {
       padding: 12vh 5vw 8vh;
@@ -107,7 +96,6 @@
     .hero a:hover {
       border-bottom: 1px solid var(--accent);
     }
-
     /* Section Styling */
     .section {
       padding: 5vh 5vw;
@@ -122,19 +110,6 @@
     .section p {
       margin-bottom: 2rem;
     }
-
-    /* About Us Content */
-    .about-us-content {
-      max-width: 800px;
-      margin: 0 auto;
-      text-align: left;
-    }
-    .about-us-content h3 {
-      font-size: 1.8rem;
-      margin-bottom: 1rem;
-      color: var(--brand-highlight); /* Additional brand color highlight */
-    }
-
     /* Tiles Grid */
     .tiles {
       display: grid;
@@ -153,19 +128,14 @@
       transform: translateY(-5px);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
-
-    /* Video Styling (Lazy Loading) */
+    /* Video Styling */
     video {
       width: 100%;
       max-width: 720px;
       border-radius: 0.5rem;
       margin: 1rem auto;
       display: block;
-      /* There's no native "loading=lazy" for video yet, but you can use poster + preload="none" 
-         or an Intersection Observer script for more advanced lazy-loading. */
-      preload: none; /* Minimizes initial load */
     }
-
     /* Contact Section */
     #contact a {
       color: var(--accent);
@@ -176,7 +146,6 @@
     #contact a:hover {
       border-bottom: 1px solid var(--accent);
     }
-
     /* Footer */
     footer {
       backdrop-filter: blur(10px);
@@ -202,12 +171,10 @@
     footer small {
       opacity: 0.6;
     }
-
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-
     /* Responsive Adjustments */
     @media (max-width: 768px) {
       .hero h1 {
@@ -219,21 +186,23 @@
       nav a {
         margin-left: 1rem;
       }
-      .about-us-content h3 {
-        font-size: 1.5rem;
-      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="logo">
-      <a href="#">
-        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo" loading="lazy">
+      <a href="index.html">
+        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo">
         <span class="logo-text"><strong>RAAHTECH</strong></span>
       </a>
     </div>
     <nav aria-label="Main Navigation">
+      <!-- New links for separate pages -->
+      <a href="about.html">About Us</a>
+      <a href="founder.html">Founder</a>
+
+      <!-- Links to sections within this page -->
       <a href="#projects">Projects</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
@@ -251,34 +220,7 @@
     </p>
   </section>
 
-  <!-- About Us Section -->
-  <section class="section" id="about-us" data-aos="fade-up">
-    <h2>About Us</h2>
-    <div class="about-us-content">
-      <h3>Our Story</h3>
-      <p>
-        RAAHTECH began with a simple ambition: to connect visionary thinking with
-        practical, future-proofed solutions. Since our inception, we’ve championed
-        innovation that elevates industries—from logistics to civic engagement—and
-        beyond.
-      </p>
-      <h3>Our Mission</h3>
-      <p>
-        To engineer secure, scalable systems that empower organizations to meet
-        tomorrow’s challenges head-on. We strive to bridge the gap between vision
-        and performance, turning complex ideas into actionable, world-changing
-        products.
-      </p>
-      <h3>Our Vision</h3>
-      <p>
-        We believe in a world where technology ignites growth, drives social impact,
-        and elevates human potential. Our vision is to become the global leader in
-        building platforms that shape the future.
-      </p>
-    </div>
-  </section>
-
-  <!-- What We Build -->
+  <!-- Example: "What We Build" Section -->
   <section class="section" data-aos="fade-up">
     <h2>What We Build</h2>
     <p>
@@ -298,15 +240,14 @@
     <h2>Project Highlights</h2>
     <div id="loadlink">
       <h3>LoadLink</h3>
-      <!-- Preload set to none for performance, with a poster for initial display -->
-      <video controls preload="none" poster="video/loadlink-poster.jpg">
+      <video controls preload="metadata" poster="video/loadlink-poster.jpg">
         <source src="video/invideo-ai-1080 LoadLink_ Revolutionizing Freight with A 2025-04-06.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
     <div id="votesphere" style="margin-top:3rem;">
       <h3>VoterSphere</h3>
-      <video controls preload="none" poster="video/votesphere-poster.jpg">
+      <video controls preload="metadata" poster="video/votesphere-poster.jpg">
         <source src="video/invideo-ai-480 VoteSphere_ Secure & Smart Digital Votin 2025-03-09.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
@@ -336,6 +277,7 @@
 
   <footer>
     <div>
+      <!-- Internal link back to the contact section on this page -->
       <a href="#contact">Contact</a> |
       <a href="#">Privacy</a> |
       <a href="#">Terms</a>
@@ -343,7 +285,7 @@
     <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
   </footer>
 
-  <!-- Initialize AOS for animations -->
+  <!-- Initialize AOS -->
   <script>
     AOS.init();
   </script>
