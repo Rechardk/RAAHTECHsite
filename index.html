@@ -1,48 +1,141 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="RAAHTECH - Scalable Solutions. Global Standards. Future-Ready." />
+  <meta name="keywords" content="RAAHTECH, scalable solutions, SaaS, logistics, AI, secure systems, automation" />
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <title>RAAHTECH | Where Vision Becomes Systems</title>
+  <!-- Google Font for a modern look -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
   <style>
     :root {
+      /* Updated color palette */
       --bg-color: #0f0f0f;
       --text-color: #f5f5f5;
       --accent: #c38c43;
       --glass: rgba(255, 255, 255, 0.05);
+      --tile-bg: #1a1a1a;
+      --tile-border: #2e2e2e;
+      --transition-speed: 0.3s;
+      /* Additional brand color if needed */
+      --brand-highlight: #ffbd59;
     }
-    body {
+
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
+      line-height: 1.6;
     }
-    header, footer {
+
+    /* Fixed header for easy navigation */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
       backdrop-filter: blur(10px);
       background-color: var(--glass);
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
     }
-    h1, h2, h3 { color: var(--text-color); }
-    a { color: var(--accent); text-decoration: none; }
+    .logo a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 40px;
+      width: auto;
+      /* Use lazy loading for images where possible */
+      /* (Note: Some browsers may not fully support lazy for images in CSS) */
+    }
+    .logo-text {
+      color: #ffffff;
+      margin-left: 0.5rem;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      transition: color var(--transition-speed);
+    }
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* Hero Section */
     .hero {
-      padding: 8vh 5vw;
+      padding: 12vh 5vw 8vh;
       text-align: center;
       background: linear-gradient(to right, #111, #1a1a1a);
+      margin-top: 70px; /* space for fixed header */
     }
-    .hero h1 { font-size: 3rem; animation: fadeIn 1.2s ease-out forwards; }
-    .hero p { font-size: 1.3rem; opacity: 0.9; }
+    .hero h1 {
+      font-size: 3rem;
+      animation: fadeIn 1.2s ease-out forwards;
+    }
+    .hero p {
+      font-size: 1.3rem;
+      opacity: 0.9;
+      margin-top: 1rem;
+    }
+    .hero a {
+      margin: 0 0.5rem;
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom var(--transition-speed);
+    }
+    .hero a:hover {
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* Section Styling */
     .section {
       padding: 5vh 5vw;
       text-align: center;
+      max-width: 1200px;
+      margin: 0 auto;
     }
+    .section h2 {
+      margin-bottom: 1rem;
+      font-size: 2.5rem;
+    }
+    .section p {
+      margin-bottom: 2rem;
+    }
+
+    /* About Us Content */
+    .about-us-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .about-us-content h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--brand-highlight); /* Additional brand color highlight */
+    }
+
+    /* Tiles Grid */
     .tiles {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -50,45 +143,146 @@
       padding-top: 2rem;
     }
     .tile {
-      background-color: #1a1a1a;
+      background-color: var(--tile-bg);
       padding: 1.5rem;
       border-radius: 0.75rem;
-      border: 1px solid #2e2e2e;
+      border: 1px solid var(--tile-border);
+      transition: transform var(--transition-speed), box-shadow var(--transition-speed);
     }
+    .tile:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Video Styling (Lazy Loading) */
     video {
       width: 100%;
       max-width: 720px;
       border-radius: 0.5rem;
+      margin: 1rem auto;
+      display: block;
+      /* There's no native "loading=lazy" for video yet, but you can use poster + preload="none" 
+         or an Intersection Observer script for more advanced lazy-loading. */
+      preload: none; /* Minimizes initial load */
     }
-    footer small { opacity: 0.6; }
+
+    /* Contact Section */
+    #contact a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-bottom var(--transition-speed);
+    }
+    #contact a:hover {
+      border-bottom: 1px solid var(--accent);
+    }
+
+    /* Footer */
+    footer {
+      backdrop-filter: blur(10px);
+      background-color: var(--glass);
+      padding: 1.5rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    footer div {
+      margin-bottom: 0.5rem;
+    }
+    footer a {
+      color: var(--accent);
+      text-decoration: none;
+      margin: 0 0.5rem;
+      transition: color var(--transition-speed);
+    }
+    footer a:hover {
+      color: #fff;
+    }
+    footer small {
+      opacity: 0.6;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+      .section h2 {
+        font-size: 2rem;
+      }
+      nav a {
+        margin-left: 1rem;
+      }
+      .about-us-content h3 {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <strong>RAAHTECH</strong>
-    <nav>
+    <div class="logo">
+      <a href="#">
+        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo" loading="lazy">
+        <span class="logo-text"><strong>RAAHTECH</strong></span>
+      </a>
+    </div>
+    <nav aria-label="Main Navigation">
       <a href="#projects">Projects</a>
       <a href="#services">Services</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero" data-aos="fade-up">
     <h1>Where Vision Becomes Systems</h1>
-    <p>Built Secure. Built for Scale.<br />Scalable Solutions. Global Standards. Future-Ready.</p>
+    <p>Built Secure. Built for Scale.<br>Scalable Solutions. Global Standards. Future-Ready.</p>
     <p>
-      <a href="#loadlink">LoadLink</a> · <a href="#votesphere">VoterSphere</a> · <a href="#contact">Request Demo</a>
+      <a href="#loadlink">LoadLink</a> ·
+      <a href="#votesphere">VoterSphere</a> ·
+      <a href="#contact">Request Demo</a>
     </p>
   </section>
 
+  <!-- About Us Section -->
+  <section class="section" id="about-us" data-aos="fade-up">
+    <h2>About Us</h2>
+    <div class="about-us-content">
+      <h3>Our Story</h3>
+      <p>
+        RAAHTECH began with a simple ambition: to connect visionary thinking with
+        practical, future-proofed solutions. Since our inception, we’ve championed
+        innovation that elevates industries—from logistics to civic engagement—and
+        beyond.
+      </p>
+      <h3>Our Mission</h3>
+      <p>
+        To engineer secure, scalable systems that empower organizations to meet
+        tomorrow’s challenges head-on. We strive to bridge the gap between vision
+        and performance, turning complex ideas into actionable, world-changing
+        products.
+      </p>
+      <h3>Our Vision</h3>
+      <p>
+        We believe in a world where technology ignites growth, drives social impact,
+        and elevates human potential. Our vision is to become the global leader in
+        building platforms that shape the future.
+      </p>
+    </div>
+  </section>
+
+  <!-- What We Build -->
   <section class="section" data-aos="fade-up">
     <h2>What We Build</h2>
     <p>
-      We engineer secure, scalable systems that connect vision with performance.<br />
+      We engineer secure, scalable systems that connect vision with performance.<br>
       From logistics and civic engagement to AI and automation, RAAHTECH leads where others follow.
     </p>
     <div class="tiles">
@@ -99,25 +293,28 @@
     </div>
   </section>
 
+  <!-- Projects Section -->
   <section class="section" id="projects" data-aos="fade-up">
     <h2>Project Highlights</h2>
     <div id="loadlink">
       <h3>LoadLink</h3>
-      <video controls preload="metadata">
-        <source src="invideo-ai-1080 LoadLink_ Revolutionizing Freight with A 2025-04-06.mp4" type="video/mp4">
+      <!-- Preload set to none for performance, with a poster for initial display -->
+      <video controls preload="none" poster="video/loadlink-poster.jpg">
+        <source src="video/invideo-ai-1080 LoadLink_ Revolutionizing Freight with A 2025-04-06.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
     <div id="votesphere" style="margin-top:3rem;">
       <h3>VoterSphere</h3>
-      <video controls preload="metadata">
-        <source src="invideo-ai-480 VoteSphere_ Secure & Smart Digital Votin 2025-03-09.mp4" type="video/mp4">
+      <video controls preload="none" poster="video/votesphere-poster.jpg">
+        <source src="video/invideo-ai-480 VoteSphere_ Secure & Smart Digital Votin 2025-03-09.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>
     <p><a href="#contact">Build Your Platform With Us</a></p>
   </section>
 
+  <!-- Services Section -->
   <section class="section" id="services" data-aos="fade-up">
     <h2>Our Services</h2>
     <div class="tiles">
@@ -129,19 +326,24 @@
     <p><a href="#contact">Book a Consultation</a></p>
   </section>
 
+  <!-- Contact Section -->
   <section class="section" id="contact" data-aos="fade-up">
     <h2>Contact Us</h2>
     <p>Email: <a href="mailto:r.p-keith@raahtech.pro">r.p-keith@raahtech.pro</a></p>
+    <p>Email: <a href="mailto:rechardkeith@gmail.com">rechardkeith@gmail.com</a></p>
     <p>Or connect via <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith’s Portfolio</a></p>
   </section>
 
   <footer>
     <div>
-      <a href="#contact">Contact</a> | <a href="#">Privacy</a> | <a href="#">Terms</a>
+      <a href="#contact">Contact</a> |
+      <a href="#">Privacy</a> |
+      <a href="#">Terms</a>
     </div>
     <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
   </footer>
 
+  <!-- Initialize AOS for animations -->
   <script>
     AOS.init();
   </script>
