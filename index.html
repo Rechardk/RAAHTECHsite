@@ -1,79 +1,143 @@
-
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>RAAHTECH | Rechard Keith</title>
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RAAHTECH - Scalable Solutions. Global Standards. Future-Ready." />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>RAAHTECH | Where Vision Becomes Systems</title>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <style>
-    body.dark {
-      background-color: #0f0f0f;
-      color: white;
+    :root {
+      --bg-color: #0f0f0f;
+      --text-color: #f5f5f5;
+      --accent: #c38c43;
+      --glass: rgba(255, 255, 255, 0.05);
     }
-    .glass {
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+    header, footer {
       backdrop-filter: blur(10px);
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: var(--glass);
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .dark .glass {
-      background-color: rgba(0, 0, 0, 0.3);
+    h1, h2, h3 { color: var(--text-color); }
+    a { color: var(--accent); text-decoration: none; }
+    .hero {
+      padding: 8vh 5vw;
+      text-align: center;
+      background: linear-gradient(to right, #111, #1a1a1a);
+    }
+    .hero h1 { font-size: 3rem; animation: fadeIn 1.2s ease-out forwards; }
+    .hero p { font-size: 1.3rem; opacity: 0.9; }
+    .section {
+      padding: 5vh 5vw;
+      text-align: center;
+    }
+    .tiles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      padding-top: 2rem;
+    }
+    .tile {
+      background-color: #1a1a1a;
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      border: 1px solid #2e2e2e;
+    }
+    iframe {
+      width: 100%;
+      max-width: 720px;
+      height: 405px;
+      border-radius: 0.5rem;
+    }
+    footer small { opacity: 0.6; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
-<body class="bg-white text-black transition-colors duration-300">
-
-  <!-- Header with dark toggle -->
-  <header class="glass p-4 fixed top-0 left-0 right-0 z-50 flex justify-between items-center backdrop-blur-md shadow-md">
-    <div class="flex items-center gap-3">
-      <img src="RAAH_logo_transparent.png" alt="RAAHTECH Logo" class="w-10 h-10 grayscale">
-      <h1 class="font-bold tracking-wide text-lg">RAAHTECH</h1>
-    </div>
-    <button onclick="toggleDarkMode()" class="border px-3 py-1 rounded text-sm hover:bg-black hover:text-white dark:border-white">Toggle Theme</button>
+<body>
+  <header>
+    <strong>RAAHTECH</strong>
+    <nav>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <!-- Spacer -->
-  <div class="h-20"></div>
-
-  <!-- Hero -->
-  <main class="text-center px-6 py-20" data-aos="fade-up">
-    <h2 class="text-4xl font-extrabold mb-4">Cybersecurity meets creative innovation.</h2>
-    <p class="text-md text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-6">
-      We protect what you build and help you design what’s next — blending security, creativity, and intelligent systems to push your ideas into form.
-    </p>
-    <p class="italic text-gray-500 mb-10">"Where vision becomes form — and stays secure."</p>
-    <div class="flex flex-wrap justify-center gap-4">
-      <a href="https://rechardk.github.io/portfolio/" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">Portfolio</a>
-      <a href="https://www.linkedin.com/in/rechardkeith" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">LinkedIn</a>
-      <a href="mailto:rechardkeith@outlook.com" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">Contact</a>
-      <a href="https://soundcloud.com/prince_raa" class="px-4 py-2 border border-black rounded hover:bg-black hover:text-white transition dark:border-white dark:hover:bg-white dark:hover:text-black">SoundCloud</a>
-    </div>
-  </main>
-
-  <!-- Bio Section -->
-  <section class="px-6 py-20 max-w-4xl mx-auto text-center" data-aos="fade-up">
-    <h3 class="text-3xl font-bold mb-4">About Rechard Keith</h3>
-    <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
-      I'm a strategic builder and creative architect — blending cybersecurity, digital design, logistics, and culture into meaningful solutions.
-      Through my brand <strong>RAAHTECH</strong>, I help businesses and creators align their vision with high-performance, secure systems.
-      Whether it’s protecting your data, launching a product, or telling a story — I build experiences that move.
+  <section class="hero" data-aos="fade-up">
+    <h1>Where Vision Becomes Systems</h1>
+    <p>Built Secure. Built for Scale.<br />Scalable Solutions. Global Standards. Future-Ready.</p>
+    <p>
+      <a href="#votesphere">VoterSphere</a> · <a href="#loadlink">LoadLink</a> · <a href="#contact">Request Demo</a>
     </p>
   </section>
 
-  <!-- Footer -->
-  <footer class="glass text-center py-6 text-sm text-gray-700 dark:text-gray-300 mt-10">
-    © 2025 Rechard Keith · RAAHTECH · Realign. Reclaim. Rise.
+  <section class="section" data-aos="fade-up">
+    <h2>What We Build</h2>
+    <p>
+      We engineer secure, scalable systems that connect vision with performance.<br />
+      From logistics and civic engagement to AI and automation, RAAHTECH leads where others follow.
+    </p>
+    <div class="tiles">
+      <div class="tile">CRM Systems</div>
+      <div class="tile">SaaS Platforms</div>
+      <div class="tile">Logistics Tools</div>
+      <div class="tile">Public Sector Tech</div>
+    </div>
+  </section>
+
+  <section class="section" id="projects" data-aos="fade-up">
+    <h2>Project Highlights</h2>
+    <div id="votesphere">
+      <h3>VoterSphere</h3>
+      <iframe src="https://ai.invideo.io/watch/RsRDsAcSmmb" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <div id="loadlink" style="margin-top:3rem;">
+      <h3>LoadLink</h3>
+      <iframe src="https://rechardk.github.io/LoadLinkDemo/" frameborder="0"></iframe>
+    </div>
+    <p><a href="#contact">Build Your Platform With Us</a></p>
+  </section>
+
+  <section class="section" id="services" data-aos="fade-up">
+    <h2>Our Services</h2>
+    <div class="tiles">
+      <div class="tile">Product Design</div>
+      <div class="tile">DevOps Integration</div>
+      <div class="tile">Cybersecurity</div>
+      <div class="tile">Startup Solutions</div>
+    </div>
+    <p><a href="#contact">Book a Consultation</a></p>
+  </section>
+
+  <section class="section" id="contact" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:r.p-keith@raahtech.pro">r.p-keith@raahtech.pro</a></p>
+    <p>Or connect via <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith’s Portfolio</a></p>
+  </section>
+
+  <footer>
+    <div>
+      <a href="#contact">Contact</a> | <a href="#">Privacy</a> | <a href="#">Terms</a>
+    </div>
+    <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
   </footer>
 
   <script>
     AOS.init();
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      document.documentElement.classList.toggle('dark');
-    }
   </script>
-
 </body>
 </html>
