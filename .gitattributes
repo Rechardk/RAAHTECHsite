@@ -10,3 +10,5 @@
 # Track document files with Git LFS
 *.pdf filter=lfs diff=lfs merge=lfs -text
 Videos/*.mp4 filter=lfs diff=lfs merge=lfs -text
+Videos/invideo-ai-480[[:space:]]VoteSphere.mp4 filter=lfs diff=lfs merge=lfs -text
+Videos/invideo-ai-1080[[:space:]]LoadLink.mp4 filter=lfs diff=lfs merge=lfs -text
