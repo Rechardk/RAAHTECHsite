@@ -1,20 +1,49 @@
+/* Global Styles */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    color: #333;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
-header, footer {
-    backdrop-filter: blur(10px);
-    background-color: var(--glass);
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 1000;
+/* Header Styles */
+header {
+    background-color: #004080;
+    color: white;
+    padding: 20px 10px;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #002040;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 0.9em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Uniform Styles for .jpg Images */
+img[src$=".jpg"] {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    margin: 10px 0;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Additional Spacing for Content */
+.container {
+    padding: 20px;
 }
 
 header .logo {
@@ -92,9 +121,4 @@ footer a:hover {
 
 footer small {
     opacity: 0.6;
-}
-
-footer {
-    text-align: center;
-    margin-top: 2rem;
 }
