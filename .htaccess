@@ -9,5 +9,12 @@ RewriteRule ^(.*)$ $1.html [L]
 RewriteCond %{THE_REQUEST} \s([^.]+)\.html [NC]
 RewriteRule ^ %1 [R=301,L]
 
+# Specific clean URL rules
+RewriteRule ^about$ about.html [L]
+RewriteRule ^founder$ founder.html [L]
+RewriteRule ^projects$ projects.html [L]
+RewriteRule ^services$ services.html [L]
+RewriteRule ^contact$ contact.html [L]
+
 # Ensure the root URL works
 DirectoryIndex index.html

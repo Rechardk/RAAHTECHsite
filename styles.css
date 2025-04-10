@@ -1,6 +1,6 @@
 /* ...existing styles... */
-nav ul li a.active {
+nav a.active {
     font-weight: bold;
-    color: #007BFF; /* Example active link color */
+    color: var(--accent);
 }
 /* ...existing styles... */

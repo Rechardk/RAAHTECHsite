@@ -21,8 +21,85 @@
     <main>
         <h1>Our Services</h1>
         <p>Welcome to our services page. Here you will find details about what we offer.</p>
-        <!-- Add service details here -->
+        <section id="services-container">
+            <div class="service-card">
+                <h2>Custom Software Development</h2>
+                <p>We build tailored software solutions to meet your unique business needs.</p>
+            </div>
+            <div class="service-card">
+                <h2>Cloud Solutions</h2>
+                <p>Leverage the power of cloud computing to scale your business efficiently.</p>
+            </div>
+            <div class="service-card">
+                <h2>Data Analytics</h2>
+                <p>Transform your data into actionable insights with our analytics services.</p>
+            </div>
+            <div class="service-card">
+                <h2>Technical Consulting</h2>
+                <p>Get expert advice to navigate complex technical challenges.</p>
+            </div>
+            <div class="service-card">
+                <h2>Product Design</h2>
+                <p>Craft intuitive and user-friendly designs for your digital products.</p>
+            </div>
+            <div class="service-card">
+                <h2>DevOps Integration</h2>
+                <p>Streamline your development and operations processes for faster delivery.</p>
+            </div>
+            <div class="service-card">
+                <h2>Cybersecurity</h2>
+                <p>Protect your business with robust security solutions and practices.</p>
+            </div>
+            <div class="service-card">
+                <h2>Startup Solutions</h2>
+                <p>Empower your startup with scalable and cost-effective tech solutions.</p>
+            </div>
+            <div class="service-card">
+                <h2>CRM Systems</h2>
+                <p>Enhance customer relationships with our custom CRM solutions.</p>
+            </div>
+            <div class="service-card">
+                <h2>SaaS Platforms</h2>
+                <p>Develop and deploy scalable SaaS platforms tailored to your needs.</p>
+            </div>
+            <div class="service-card">
+                <h2>Logistics Tools</h2>
+                <p>Optimize your supply chain with our advanced logistics tools.</p>
+            </div>
+            <div class="service-card">
+                <h2>Public Sector Tech</h2>
+                <p>Innovate public services with cutting-edge technology solutions.</p>
+            </div>
+        </section>
     </main>
+    <style>
+        #services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        .service-card {
+            background-color: #f5f5f5;
+            color: #0f0f0f;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+        .service-card h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+    </style>
     <footer>
         <!-- ...existing footer... -->
     </footer>

@@ -7,22 +7,99 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- ...existing navigation... -->
     <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+        <div class="logo">
+            <a href="/">
+                <img src="images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
+                <span class="logo-text"><strong>RAAHTECH</strong></span>
+            </a>
+        </div>
+        <nav aria-label="Main Navigation">
+            <a href="/" data-aos="fade-down">Home</a>
+            <a href="/about" data-aos="fade-down" data-aos-delay="100">About Us</a>
+            <a href="/founder" data-aos="fade-down" data-aos-delay="200">Founder</a>
+            <a href="/projects" data-aos="fade-down" data-aos-delay="300">Projects</a>
+            <a href="/services" data-aos="fade-down" data-aos-delay="400">Services</a>
+            <a href="/contact" class="active" data-aos="fade-down" data-aos-delay="500">Contact</a>
         </nav>
     </header>
     <main>
         <h1>Contact Us</h1>
         <p>Welcome to our contact page. Reach out to us using the information below.</p>
-        <!-- Add contact form or details here -->
+        <section id="contact-info">
+            <h2>Our Contact Details</h2>
+            <p id="email">Email: <span>Loading...</span></p>
+            <p id="phone">Phone: <span>Loading...</span></p>
+            <p id="address">Address: <span>Loading...</span></p>
+        </section>
+        <section id="inquiry-form">
+            <h2>Send Us an Inquiry</h2>
+            <form action="/submit-inquiry" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </section>
     </main>
+    <script>
+        async function fetchContactInfo() {
+            try {
+                const response = await fetch('/');
+                const data = await response.json();
+                document.getElementById('email').innerHTML = `Email: <a href="mailto:${data.email}">${data.email}</a>`;
+                document.getElementById('phone').innerHTML = `Phone: <a href="tel:${data.phone}">${data.phone}</a>`;
+                document.getElementById('address').innerHTML = `Address: ${data.address}`;
+            } catch (error) {
+                console.error('Error fetching contact info:', error);
+            }
+        }
+        fetchContactInfo();
+    </script>
+    <style>
+        #contact-info, #inquiry-form {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #contact-info h2, #inquiry-form h2 {
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+        #contact-info p, #inquiry-form label {
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+        }
+        #inquiry-form input, #inquiry-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        #inquiry-form button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--accent, #c38c43);
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #inquiry-form button:hover {
+            background-color: #a06d33;
+        }
+    </style>
     <footer>
         <!-- ...existing footer... -->
     </footer>
