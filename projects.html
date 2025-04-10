@@ -7,56 +7,110 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         :root {
-            --bg-color: #0f0f0f;
-            --text-color: #f5f5f5;
+            --bg-color: #121212;
+            --text-color: #ffffff;
             --accent: #c38c43;
-            --glass: rgba(255, 255, 255, 0.05);
-            --tile-bg: #1a1a1a;
-            --tile-border: #2e2e2e;
+            --glass: rgba(255, 255, 255, 0.08);
+            --tile-bg: #1e1e1e;
+            --tile-border: #333333;
             --transition-speed: 0.3s;
         }
         body {
             font-family: 'Montserrat', sans-serif;
             background-color: var(--bg-color);
             color: var(--text-color);
-            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        header, main, footer {
+            background-color: var(--bg-color); /* Ensure all sections use the background color */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: var(--tile-bg);
+            border-bottom: 1px solid var(--tile-border);
+        }
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+        header .logo img {
+            height: 40px;
+            margin-right: 0.5rem;
+        }
+        header nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 1rem;
+            font-size: 1rem;
+            transition: color var(--transition-speed);
+        }
+        header nav a:hover, header nav a.active {
+            color: var(--accent);
+        }
+        main {
+            text-align: center;
+            padding: 2rem;
+        }
+        main h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        main p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
         }
         #projects-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             padding: 2rem;
-            justify-items: center;
         }
         .project-card {
             background-color: var(--tile-bg);
             color: var(--text-color);
             padding: 1.5rem;
-            border-radius: 8px;
+            border-radius: 10px;
             border: 1px solid var(--tile-border);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            max-width: 350px;
             text-align: center;
         }
         .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
         }
         .project-card h2 {
-            margin-bottom: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        .project-card video {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
         }
         .project-card p {
             font-size: 1rem;
-            line-height: 1.6;
+            color: #cccccc;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: var(--tile-bg);
+            color: var(--text-color);
+            border-top: 1px solid var(--tile-border);
         }
         @media (max-width: 768px) {
-            #projects-container {
-                padding: 1rem;
+            header {
+                flex-direction: column;
+                text-align: center;
             }
-            .project-card {
-                padding: 1rem;
+            header nav a {
+                margin: 0.5rem 0;
             }
         }
     </style>
@@ -101,7 +155,7 @@
         </section>
     </main>
     <footer>
-        <!-- ...existing footer... -->
+        <p>&copy; 2023 RAAHTECH. All rights reserved.</p>
     </footer>
 </body>
 </html>
