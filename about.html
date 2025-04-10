@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | RAAHTECH</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <style>
@@ -13,20 +13,26 @@
       --text-color: #f5f5f5;
       --accent: #c38c43;
       --glass: rgba(255, 255, 255, 0.05);
+      --tile-border: #2e2e2e;
+      --transition-speed: 0.3s;
     }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
     html {
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-color);
       color: var(--text-color);
     }
+
     header, footer {
       backdrop-filter: blur(10px);
       background-color: var(--glass);
@@ -38,9 +44,11 @@
       top: 0;
       z-index: 1000;
     }
+
     header {
       animation: slideDown 0.8s ease-out;
     }
+
     @keyframes slideDown {
       from {
         transform: translateY(-100%);
@@ -51,29 +59,34 @@
         opacity: 1;
       }
     }
+
     .logo img {
-      height: 50px; /* Increased for better visibility */
+      height: 50px;
     }
+
     .logo a {
       display: flex;
       align-items: center;
       text-decoration: none;
     }
+
     .logo-text {
-      color: var(--accent); /* Updated to match the accent color */
+      color: var(--accent);
       font-weight: bold;
       font-size: 1.2rem;
       margin-left: 0.5rem;
     }
+
     nav a {
       margin-left: 1.5rem;
       color: var(--accent);
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem; /* Adjusted for consistency */
+      font-size: 1rem;
       position: relative;
       overflow: hidden;
     }
+
     nav a::after {
       content: '';
       position: absolute;
@@ -84,40 +97,66 @@
       background-color: var(--accent);
       transition: width 0.3s ease, left 0.3s ease;
     }
+
     nav a:hover::after {
       width: 100%;
       left: 0;
     }
+
     nav a:hover {
       color: #fff;
-      text-decoration: underline; /* Added underline for hover effect */
+      text-decoration: underline;
     }
+
     .section {
       padding: 10vh 5vw;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
     }
+
     h2 {
       font-size: 2.5rem;
       margin-bottom: 1.5rem;
     }
+
     .about-us-content {
       text-align: left;
       max-width: 800px;
       margin: 0 auto;
     }
+
     .about-us-content h3 {
       margin-top: 1.5rem;
       font-size: 1.8rem;
     }
+
     footer div {
       margin-bottom: 0.5rem;
     }
+
     footer a {
       color: var(--accent);
       text-decoration: none;
       margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    footer small {
+      opacity: 0.6;
+    }
+
+    @media (max-width: 768px) {
+      .section h2 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        margin-left: 1rem;
+      }
     }
   </style>
 </head>
@@ -125,46 +164,39 @@
   <header>
     <div class="logo">
       <a href="index.html">
-        <img src="image/RAAH_logo_transparent.png" alt="RAAHTECH Logo">
+        <img src="images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
         <span class="logo-text"><strong>RAAHTECH</strong></span>
       </a>
     </div>
     <nav aria-label="Main Navigation">
       <a href="index.html" data-aos="fade-down">Home</a>
-      <a href="founder.html" data-aos="fade-down" data-aos-delay="100">Founder</a>
-      <a href="index.html#contact" data-aos="fade-down" data-aos-delay="200">Contact</a>
+      <a href="about.html" data-aos="fade-down" data-aos-delay="100">About Us</a>
+      <a href="founder.html" data-aos="fade-down" data-aos-delay="200">Founder</a>
+      <a href="index.html#projects" data-aos="fade-down" data-aos-delay="300">Projects</a>
+      <a href="index.html#services" data-aos="fade-down" data-aos-delay="400">Services</a>
+      <a href="index.html#contact" data-aos="fade-down" data-aos-delay="500">Contact</a>
     </nav>
   </header>
-
   <!-- About Us Section -->
   <section class="section" data-aos="fade-up">
     <h2>About Us</h2>
     <div class="about-us-content">
       <h3>Our Story</h3>
       <p>
-        RAAHTECH began with a simple ambition: to connect visionary thinking with
-        practical, future-proofed solutions. Since our inception, we’ve championed
-        innovation that elevates industries—from logistics to civic engagement—and
-        beyond.
+        RAAHTECH began with a simple ambition: to connect visionary thinking with practical, future-proofed solutions. Since our inception, we’ve championed innovation that elevates industries—from logistics to civic engagement—and beyond.
       </p>
 
       <h3>Our Mission</h3>
       <p>
-        To engineer secure, scalable systems that empower organizations to meet
-        tomorrow’s challenges head-on. We strive to bridge the gap between vision
-        and performance, turning complex ideas into actionable, world-changing
-        products.
+        To engineer secure, scalable systems that empower organizations to meet tomorrow’s challenges head-on. We strive to bridge the gap between vision and performance, turning complex ideas into actionable, world-changing products.
       </p>
 
       <h3>Our Vision</h3>
       <p>
-        We believe in a world where technology ignites growth, drives social impact,
-        and elevates human potential. Our vision is to become the global leader in
-        building platforms that shape the future.
+        We believe in a world where technology ignites growth, drives social impact, and elevates human potential. Our vision is to become the global leader in building platforms that shape the future.
       </p>
     </div>
   </section>
-
   <footer>
     <div>
       <a href="index.html#contact">Contact</a> |
@@ -173,7 +205,6 @@
     </div>
     <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
   </footer>
-
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>AOS.init();</script>
 </body>
