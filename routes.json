@@ -11,6 +11,18 @@
     {
       "route": "/founder",
       "rewrite": "/founder.html"
+    },
+    {
+      "route": "/contact",
+      "rewrite": "/index.html#contact"
+    },
+    {
+      "route": "/projects",
+      "rewrite": "/projects.html"
+    },
+    {
+      "route": "/services",
+      "rewrite": "/services.html"
     }
   ]
 }
