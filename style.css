@@ -1,0 +1,136 @@
+/* Add unified font, color, and button styles */
+:root {
+  --font-main: 'Poppins', sans-serif;
+  --color-primary: #5A0FC8;
+  --color-accent: #E91E63;
+  --btn-radius: 10px;
+  --section-padding: 4rem 2rem;
+}
+
+/* Global Styles */
+body {
+  font-family: var(--font-main);
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  background-color: #121212;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .social-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+}
+
+/* Button Styles */
+.button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #007BFF;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+button {
+  background-color: var(--color-primary);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--btn-radius);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--color-accent);
+}
+
+/* Section Padding/Margin */
+section {
+  padding: 2rem;
+  margin: 1rem 0;
+}
+
+/* Hero/Banner Design */
+.hero {
+  background: url('/images/banner.jpg') no-repeat center center/cover;
+  padding: 6rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  header nav {
+    flex-direction: column;
+  }
+
+  .section {
+    padding: 2rem 1rem;
+  }
+
+  .hero {
+    text-align: center;
+  }
+}

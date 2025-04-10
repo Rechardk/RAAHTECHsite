@@ -77,31 +77,40 @@
             <a href="/contact" class="active">Contact</a>
         </nav>
     </header>
-    <main>
-        <h1 data-aos="fade-up">Contact Us</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Welcome to our contact page. Reach out to us using the information below.</p>
-        <section id="contact-info" data-aos="fade-up" data-aos-delay="200">
-            <h2>Our Contact Details</h2>
-            <p id="email">Email: <span>Loading...</span></p>
-            <p id="phone">Phone: <span>Loading...</span></p>
-            <p id="address">Address: <span>Loading...</span></p>
-        </section>
-        <section id="inquiry-form" data-aos="fade-up" data-aos-delay="300">
-            <h2>Send Us an Inquiry</h2>
-            <form action="/submit-inquiry" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+
+    <section class="hero">
+        <h1>Contact Us</h1>
+        <p>We'd love to hear from you. Get in touch with us today!</p>
+    </section>
+
+    <section>
+        <main>
+            <h1 data-aos="fade-up">Contact Us</h1>
+            <p data-aos="fade-up" data-aos-delay="100">Welcome to our contact page. Reach out to us using the information below.</p>
+            <section id="contact-info" data-aos="fade-up" data-aos-delay="200">
+                <h2>Our Contact Details</h2>
+                <p id="email">Email: <span>Loading...</span></p>
+                <p id="phone">Phone: <span>Loading...</span></p>
+                <p id="address">Address: <span>Loading...</span></p>
+            </section>
+            <section id="inquiry-form" data-aos="fade-up" data-aos-delay="300">
+                <h2>Send Us an Inquiry</h2>
+                <form action="/submit-inquiry" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </section>
+        </main>
+    </section>
+
     <footer>
         <div>
             <a href="/contact">Contact</a> |
@@ -110,6 +119,7 @@
         </div>
         <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
     </footer>
+    <script src="/script.js"></script>
     <script>
         async function fetchContactInfo() {
             try {
