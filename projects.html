@@ -32,6 +32,11 @@
             font-size: 1rem;
             line-height: 1.6;
         }
+        .project-card img, .project-card video {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
     </style>
 </head>
 <body>
@@ -52,40 +57,29 @@
         </nav>
     </header>
     <main>
-        <h1 data-aos="fade-up">Our Projects</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Welcome to our projects page. Here you will find details about our work.</p>
+        <h1 data-aos="fade-up">Project Highlights</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Explore some of the key projects we have worked on.</p>
         <section id="projects-container" data-aos="fade-up" data-aos-delay="200">
-            <!-- Project cards will be dynamically inserted here -->
+            <div class="project-card">
+                <h2>LoadLink</h2>
+                <video controls preload="auto" poster="https://raahtech.blob.core.windows.net/raahtechsite/Images/LOADLINK_ICON/a45eafc7-e250-4052-8a61-caacaa5e04aa.png">
+                    <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-1080%20LoadLink.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>LoadLink revolutionizes freight logistics with cutting-edge AI and automation, ensuring efficiency and scalability.</p>
+            </div>
+            <div class="project-card">
+                <h2>VoterSphere</h2>
+                <video controls preload="auto" poster="https://raahtech.blob.core.windows.net/raahtechsite/Images/Votersphere/Votespherelogo.png">
+                    <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-480%20VoteSphere.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <p>VoterSphere provides a secure and smart digital voting platform, enhancing civic engagement and trust.</p>
+            </div>
         </section>
     </main>
     <footer>
         <!-- ...existing footer... -->
     </footer>
-    <script>
-        async function fetchProjects() {
-            try {
-                const response = await fetch('/api/projects'); // Correct endpoint
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const projects = await response.json();
-                const container = document.getElementById('projects-container');
-                container.innerHTML = ''; // Clear existing content
-                projects.forEach(project => {
-                    const projectCard = document.createElement('div');
-                    projectCard.className = 'project-card';
-                    projectCard.innerHTML = `
-                        <h2>${project.title}</h2>
-                        <p>${project.description}</p>
-                    `;
-                    container.appendChild(projectCard);
-                });
-            } catch (error) {
-                console.error('Error fetching projects:', error);
-                document.getElementById('projects-container').innerHTML = `<p>Unable to load projects. Please try again later.</p>`;
-            }
-        }
-        fetchProjects();
-    </script>
 </body>
 </html>
