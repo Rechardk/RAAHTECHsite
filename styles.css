@@ -1,29 +1,40 @@
-/* ...existing styles... */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    background-color: #f4f4f4;
     color: #333;
 }
 
 header {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
     padding: 1rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
 }
 
 header .logo img {
     max-height: 50px;
-    vertical-align: middle;
+    margin-right: 0.5rem;
+}
+
+header nav {
+    display: flex;
+    gap: 1rem;
 }
 
 header nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 1rem;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
@@ -32,14 +43,23 @@ header nav a:hover {
     color: var(--accent, #c38c43);
 }
 
+header nav a.active {
+    font-weight: bold;
+    color: var(--accent, #c38c43);
+    text-decoration: underline;
+}
+
 main {
     padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 footer {
-    background-color: #333;
+    background-color: #222;
     color: #fff;
     text-align: center;
     padding: 1rem 0;
@@ -54,13 +74,3 @@ footer a {
 footer a:hover {
     text-decoration: underline;
 }
-
-nav a.active {
-    font-weight: bold;
-    color: var(--accent);
-    text-decoration: underline; /* Added underline for active link */
-}
-nav a.active:hover {
-    color: #a06d33; /* Slightly darker accent color on hover */
-}
-/* ...existing styles... */

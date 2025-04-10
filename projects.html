@@ -52,9 +52,9 @@
         </nav>
     </header>
     <main>
-        <h1>Our Projects</h1>
-        <p>Welcome to our projects page. Here you will find details about our work.</p>
-        <section id="projects-container">
+        <h1 data-aos="fade-up">Our Projects</h1>
+        <p data-aos="fade-up" data-aos-delay="100">Welcome to our projects page. Here you will find details about our work.</p>
+        <section id="projects-container" data-aos="fade-up" data-aos-delay="200">
             <!-- Project cards will be dynamically inserted here -->
         </section>
     </main>
@@ -64,12 +64,13 @@
     <script>
         async function fetchProjects() {
             try {
-                const response = await fetch('/api/projects'); // Updated endpoint
+                const response = await fetch('/api/projects'); // Correct endpoint
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
                 const projects = await response.json();
                 const container = document.getElementById('projects-container');
+                container.innerHTML = ''; // Clear existing content
                 projects.forEach(project => {
                     const projectCard = document.createElement('div');
                     projectCard.className = 'project-card';
