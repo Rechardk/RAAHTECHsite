@@ -57,6 +57,10 @@
     .logo-text {
       color: #fff;
       margin-left: 0.5rem;
+      transition: color 0.3s ease;
+    }
+    .logo-text:hover {
+      color: var(--accent);
     }
     nav a {
       margin-left: 1.5rem;
@@ -96,6 +100,10 @@
       text-align: left;
       max-width: 800px;
       margin: 0 auto;
+      line-height: 1.8;
+    }
+    footer {
+      padding: 2rem 0;
     }
     footer div {
       margin-bottom: 0.5rem;
@@ -104,6 +112,9 @@
       color: var(--accent);
       text-decoration: none;
       margin: 0 0.5rem;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -116,12 +127,12 @@
       </a>
     </div>
     <nav aria-label="Main Navigation">
-      <a href="index" data-aos="fade-down">Home</a>
-      <a href="about" data-aos="fade-down" data-aos-delay="100">About Us</a>
-      <a href="founder" data-aos="fade-down" data-aos-delay="200">Founder</a>
-      <a href="projects" data-aos="fade-down" data-aos-delay="300">Projects</a>
-      <a href="services" data-aos="fade-down" data-aos-delay="400">Services</a>
-      <a href="contact" data-aos="fade-down" data-aos-delay="500">Contact</a>
+      <a href="/" data-aos="fade-down">Home</a>
+      <a href="/about" data-aos="fade-down" data-aos-delay="100">About Us</a>
+      <a href="/founder" data-aos="fade-down" data-aos-delay="200">Founder</a>
+      <a href="/projects" data-aos="fade-down" data-aos-delay="300">Projects</a>
+      <a href="/services" data-aos="fade-down" data-aos-delay="400">Services</a>
+      <a href="/contact" data-aos="fade-down" data-aos-delay="500">Contact</a>
     </nav>
   </header>
 
