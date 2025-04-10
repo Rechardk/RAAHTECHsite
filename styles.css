@@ -1,0 +1,6 @@
+/* ...existing styles... */
+nav ul li a.active {
+    font-weight: bold;
+    color: #007BFF; /* Example active link color */
+}
+/* ...existing styles... */
