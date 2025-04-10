@@ -19,6 +19,9 @@
       padding: 0;
       box-sizing: border-box;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: var(--bg-color);
@@ -31,9 +34,25 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    header {
+      animation: slideDown 0.8s ease-out;
+    }
+    @keyframes slideDown {
+      from {
+        transform: translateY(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
     }
     .logo img {
-      height: 40px;
+      height: 50px; /* Increased for better visibility */
     }
     .logo a {
       display: flex;
@@ -41,19 +60,40 @@
       text-decoration: none;
     }
     .logo-text {
-      color: #fff;
+      color: var(--accent); /* Updated to match the accent color */
+      font-weight: bold;
+      font-size: 1.2rem;
       margin-left: 0.5rem;
     }
     nav a {
       margin-left: 1.5rem;
       color: var(--accent);
       text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem; /* Adjusted for consistency */
+      position: relative;
+      overflow: hidden;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: var(--accent);
+      transition: width 0.3s ease, left 0.3s ease;
+    }
+    nav a:hover::after {
+      width: 100%;
+      left: 0;
     }
     nav a:hover {
       color: #fff;
+      text-decoration: underline; /* Added underline for hover effect */
     }
     .section {
-      padding: 5vh 5vw;
+      padding: 10vh 5vw;
       max-width: 1200px;
       margin: 0 auto;
       text-align: center;
