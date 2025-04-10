@@ -1,0 +1,16 @@
+{
+  "routes": [
+    {
+      "route": "/about",
+      "rewrite": "/about.html"
+    },
+    {
+      "route": "/index",
+      "rewrite": "/index.html"
+    },
+    {
+      "route": "/founder",
+      "rewrite": "/founder.html"
+    }
+  ]
+}
