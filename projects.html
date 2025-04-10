@@ -104,6 +104,14 @@
             color: var(--text-color);
             border-top: 1px solid var(--tile-border);
         }
+        footer div a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin: 0 0.5rem;
+        }
+        footer div a:hover {
+            color: var(--accent);
+        }
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
@@ -124,12 +132,12 @@
             </a>
         </div>
         <nav aria-label="Main Navigation">
-            <a href="/" data-aos="fade-down">Home</a>
-            <a href="/about" data-aos="fade-down" data-aos-delay="100">About Us</a>
-            <a href="/founder" data-aos="fade-down" data-aos-delay="200">Founder</a>
-            <a href="/projects" class="active" data-aos="fade-down" data-aos-delay="300">Projects</a>
-            <a href="/services" data-aos="fade-down" data-aos-delay="400">Services</a>
-            <a href="/contact" data-aos="fade-down" data-aos-delay="500">Contact</a>
+            <a href="/">Home</a>
+            <a href="/about">About Us</a>
+            <a href="/founder">Founder</a>
+            <a href="/projects" class="active">Projects</a>
+            <a href="/services">Services</a>
+            <a href="/contact">Contact</a>
         </nav>
     </header>
     <main>
@@ -155,7 +163,12 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2023 RAAHTECH. All rights reserved.</p>
+        <div>
+            <a href="/contact">Contact</a> |
+            <a href="/privacy">Privacy</a> |
+            <a href="/terms">Terms</a>
+        </div>
+        <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
     </footer>
 </body>
 </html>
