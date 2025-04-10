@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
     <style>
         :root {
             --bg-color: #0f0f0f;
@@ -62,20 +62,12 @@
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/">
-                <img src="images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
-                <span class="logo-text"><strong>RAAHTECH</strong></span>
-            </a>
-        </div>
-        <nav aria-label="Main Navigation">
-            <a href="/">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/founder">Founder</a>
-            <a href="/projects">Projects</a>
-            <a href="/services">Services</a>
-            <a href="/contact" class="active">Contact</a>
-        </nav>
+        <!-- Include header partial -->
+        <script>
+            fetch('/partials/header.html')
+                .then(res => res.text())
+                .then(data => document.querySelector('header').innerHTML = data);
+        </script>
     </header>
 
     <section class="hero">
@@ -112,12 +104,12 @@
     </section>
 
     <footer>
-        <div>
-            <a href="/contact">Contact</a> |
-            <a href="/privacy">Privacy</a> |
-            <a href="/terms">Terms</a>
-        </div>
-        <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
+        <!-- Include footer partial -->
+        <script>
+            fetch('/partials/footer.html')
+                .then(res => res.text())
+                .then(data => document.querySelector('footer').innerHTML = data);
+        </script>
     </footer>
     <script src="/script.js"></script>
     <script>

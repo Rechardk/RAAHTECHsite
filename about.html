@@ -7,168 +7,32 @@
   <link rel="icon" type="image/svg+xml" href="images/favicon.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link rel="stylesheet" href="style.css">
   <script src="/script.js" defer></script>
-  <style>
-    :root {
-      --bg-color: #0f0f0f;
-      --text-color: #f5f5f5;
-      --accent: #c38c43;
-      --glass: rgba(255, 255, 255, 0.05);
-      --tile-border: #2e2e2e;
-      --transition-speed: 0.3s;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    header, footer {
-      backdrop-filter: blur(10px);
-      background-color: var(--glass);
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    header {
-      animation: slideDown 0.8s ease-out;
-    }
-
-    @keyframes slideDown {
-      from {
-        transform: translateY(-100%);
-        opacity: 0;
-      }
-      to {
-        transform: translateY(0);
-        opacity: 1;
-      }
-    }
-
-    .logo img {
-      height: 50px;
-    }
-
-    .logo a {
-      display: flex;
-      align-items: center;
-      text-decoration: none;
-    }
-
-    .logo-text {
-      color: var(--accent);
-      font-weight: bold;
-      font-size: 1.2rem;
-      margin-left: 0.5rem;
-    }
-
-    nav a {
-      margin-left: 1.5rem;
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    nav a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background-color: var(--accent);
-      transition: width 0.3s ease, left 0.3s ease;
-    }
-
-    nav a:hover::after {
-      width: 100%;
-      left: 0;
-    }
-
-    nav a:hover {
-      color: #fff;
-    }
-
-    .section {
-      padding: 10vh 5vw;
-      max-width: 1200px;
-      margin: 0 auto;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .about-us-content {
-      text-align: left;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .about-us-content h3 {
-      margin-top: 1.5rem;
-      font-size: 1.8rem;
-    }
-
-    footer div {
-      margin-bottom: 0.5rem;
-    }
-
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-      color: #fff;
-    }
-
-    footer small {
-      opacity: 0.6;
-    }
-
-    @media (max-width: 768px) {
-      .section h2 {
-        font-size: 2rem;
-      }
-
-      nav a {
-        margin-left: 1rem;
-      }
-    }
-  </style>
 </head>
 <body>
-  <header></header>
+  <header>
+      <!-- Include header partial -->
+      <script>
+          fetch('/partials/header.html')
+              .then(res => res.text())
+              .then(data => document.querySelector('header').innerHTML = data);
+      </script>
+  </header>
 
   <section class="hero">
     <h1>About Us</h1>
     <p>Learn more about our mission and values.</p>
   </section>
 
-  <footer></footer>
+  <footer>
+      <!-- Include footer partial -->
+      <script>
+          fetch('/partials/footer.html')
+              .then(res => res.text())
+              .then(data => document.querySelector('footer').innerHTML = data);
+      </script>
+  </footer>
   <script src="/script.js"></script>
 </body>
 </html>

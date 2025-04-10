@@ -4,24 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/">
-                <img src="images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
-                <span class="logo-text"><strong>RAAHTECH</strong></span>
-            </a>
-        </div>
-        <nav aria-label="Main Navigation">
-            <a href="/">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/founder">Founder</a>
-            <a href="/projects">Projects</a>
-            <a href="/services" class="active">Services</a>
-            <a href="/contact">Contact</a>
-        </nav>
+        <script>
+            fetch('/partials/header.html')
+                .then(res => res.text())
+                .then(data => document.querySelector('header').innerHTML = data);
+        </script>
     </header>
 
     <section class="hero">
@@ -30,66 +21,17 @@
     </section>
 
     <main>
-        <h1 data-aos="fade-up">Our Services</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Welcome to our services page. Here you will find details about what we offer.</p>
-        <section id="services-container" data-aos="fade-up" data-aos-delay="200">
-            <div class="service-card">
-                <h2>Custom Software Development</h2>
-                <p>We build tailored software solutions to meet your unique business needs.</p>
-            </div>
-            <div class="service-card">
-                <h2>Cloud Solutions</h2>
-                <p>Leverage the power of cloud computing to scale your business efficiently.</p>
-            </div>
-            <div class="service-card">
-                <h2>Data Analytics</h2>
-                <p>Transform your data into actionable insights with our analytics services.</p>
-            </div>
-            <div class="service-card">
-                <h2>Technical Consulting</h2>
-                <p>Get expert advice to navigate complex technical challenges.</p>
-            </div>
-            <div class="service-card">
-                <h2>Product Design</h2>
-                <p>Craft intuitive and user-friendly designs for your digital products.</p>
-            </div>
-            <div class="service-card">
-                <h2>DevOps Integration</h2>
-                <p>Streamline your development and operations processes for faster delivery.</p>
-            </div>
-            <div class="service-card">
-                <h2>Cybersecurity</h2>
-                <p>Protect your business with robust security solutions and practices.</p>
-            </div>
-            <div class="service-card">
-                <h2>Startup Solutions</h2>
-                <p>Empower your startup with scalable and cost-effective tech solutions.</p>
-            </div>
-            <div class="service-card">
-                <h2>CRM Systems</h2>
-                <p>Enhance customer relationships with our custom CRM solutions.</p>
-            </div>
-            <div class="service-card">
-                <h2>SaaS Platforms</h2>
-                <p>Develop and deploy scalable SaaS platforms tailored to your needs.</p>
-            </div>
-            <div class="service-card">
-                <h2>Logistics Tools</h2>
-                <p>Optimize your supply chain with our advanced logistics tools.</p>
-            </div>
-            <div class="service-card">
-                <h2>Public Sector Tech</h2>
-                <p>Innovate public services with cutting-edge technology solutions.</p>
-            </div>
+        <section id="services-container">
+            <!-- ...existing service cards... -->
         </section>
     </main>
+
     <footer>
-        <div>
-            <a href="/contact">Contact</a> |
-            <a href="/privacy">Privacy</a> |
-            <a href="/terms">Terms</a>
-        </div>
-        <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
+        <script>
+            fetch('/partials/footer.html')
+                .then(res => res.text())
+                .then(data => document.querySelector('footer').innerHTML = data);
+        </script>
     </footer>
     <script src="/script.js"></script>
 </body>

@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RAAHTECH - Scalable Solutions. Global Standards. Future-Ready." />
-  <meta name="keywords" content="RAAHTECH, scalable solutions, SaaS, logistics, AI, secure systems, automation" />
-  <link rel="icon" type="images/sVg+xml" href="faVicon.sVg" />
-  <title>RAAHTECH | Where Vision Becomes Systems</title>
-  <!-- Google Font for a modern look -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <title>RAAHTECH | Future-Ready Solutions</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
 </head>
 <body>
-  <header></header>
+  <header>
+    <script>
+        fetch('/partials/header.html')
+            .then(res => res.text())
+            .then(data => document.querySelector('header').innerHTML = data);
+    </script>
+  </header>
 
   <section class="hero">
-    <h1>Welcome to RAAHTECH</h1>
-    <p>Innovative solutions for your business needs.</p>
-    <a href="/services" class="button">Learn More</a>
+    <h1>Innovate. Automate. Dominate.</h1>
+    <p>Empowering businesses with cutting-edge technology.</p>
+    <a href="#services" class="button">Explore Services</a>
   </section>
 
-  <section>
+  <section id="about" class="about">
     <h2>About Us</h2>
-    <p>We provide cutting-edge technology solutions to help your business thrive.</p>
+    <p>At RAAHTECH, we deliver scalable and secure solutions tailored to your needs.</p>
   </section>
 
-  <footer></footer>
-  <script src="/script.js"></script>
-  <script>
-    AOS.init();
-  </script>
+  <section id="services" class="services">
+    <h2>Our Services</h2>
+    <p>From AI-driven automation to SaaS solutions, we redefine possibilities.</p>
+  </section>
+
+  <footer>
+    <script>
+        fetch('/partials/footer.html')
+            .then(res => res.text())
+            .then(data => document.querySelector('footer').innerHTML = data);
+    </script>
+  </footer>
 </body>
 </html>

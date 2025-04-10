@@ -1,25 +1,29 @@
-/* Add unified font, color, and button styles */
+/* Unified font, color, and button styles */
 :root {
   --font-main: 'Poppins', sans-serif;
   --color-primary: #5A0FC8;
   --color-accent: #E91E63;
   --btn-radius: 10px;
   --section-padding: 4rem 2rem;
+  --bg-color: #000;
+  --text-color: #fff;
+  --header-bg: #111;
+  --footer-bg: #111;
+  --accent-color: #f4a300;
 }
 
 /* Global Styles */
 body {
-  font-family: var(--font-main);
   margin: 0;
-  padding: 0;
-  color: #fff;
-  background-color: #121212;
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
 header, footer {
-  background-color: #333;
-  color: white;
+  background-color: var(--header-bg);
+  color: var(--text-color);
   padding: 1rem;
 }
 
@@ -38,7 +42,7 @@ header, footer {
 }
 
 .nav-links a {
-  color: white;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -54,21 +58,18 @@ footer .social-links {
 /* Button Styles */
 .button {
   display: inline-block;
-  padding: 0.5rem 1rem;
-  background-color: #007BFF;
-  color: white;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--bg-color);
   text-decoration: none;
-  border-radius: 5px;
+  font-weight: 600;
+  border-radius: var(--btn-radius);
   transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #0056b3;
 }
 
 button {
   background-color: var(--color-primary);
-  color: #fff;
+  color: var(--text-color);
   padding: 0.75rem 1.5rem;
   border-radius: var(--btn-radius);
   border: none;
@@ -82,25 +83,14 @@ button:hover {
 
 /* Section Padding/Margin */
 section {
-  padding: 2rem;
+  padding: var(--section-padding);
   margin: 1rem 0;
 }
 
 /* Hero/Banner Design */
 .hero {
-  background: url('/images/banner.jpg') no-repeat center center/cover;
-  padding: 6rem 2rem;
   text-align: center;
-  color: white;
-}
-
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
+  padding: 5rem 2rem;
 }
 
 /* Mobile Responsiveness */
@@ -122,71 +112,21 @@ section {
     font-size: 1rem;
   }
 
-  header nav {
-    flex-direction: column;
-  }
-
   .section {
     padding: 2rem 1rem;
   }
-
-  .hero {
-    text-align: center;
-  }
 }
 
-/* Additional styles from styles.css */
-header {
-  background-color: #004080;
-  color: white;
-  padding: 20px 10px;
-  text-align: center;
-  font-size: 1.5em;
-}
-
-footer {
-  background-color: #002040;
-  color: white;
-  padding: 10px 10px;
-  text-align: center;
-  font-size: 0.9em;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-img[src$=".jpg"] {
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  margin: 10px 0;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.container {
-  padding: 20px;
-}
-
+/* Header and Footer */
 header .logo {
-  display: flex;
-  align-items: center;
-}
-
-header .logo img {
-  height: 40px;
-}
-
-header nav {
-  display: flex;
-  gap: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-color);
 }
 
 header nav a {
   margin-left: 1.5rem;
-  color: var(--accent);
+  color: var(--text-color);
   text-decoration: none;
   position: relative;
   overflow: hidden;
@@ -201,7 +141,7 @@ header nav a::after {
   left: 50%;
   width: 0;
   height: 2px;
-  background-color: var(--accent);
+  background-color: var(--accent-color);
   transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -211,36 +151,28 @@ header nav a:hover::after {
 }
 
 header nav a:hover {
-  color: #fff;
+  color: var(--accent-color);
 }
 
 header nav a.active {
   font-weight: bold;
-  color: var(--accent, #c38c43);
+  color: var(--accent-color);
   text-decoration: underline;
 }
 
-main {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-footer div {
-  margin-bottom: 0.5rem;
+footer {
+  text-align: center;
+  border-top: 2px solid var(--accent-color);
 }
 
 footer a {
-  color: var(--accent);
+  color: var(--accent-color);
   text-decoration: none;
   margin: 0 0.5rem;
 }
 
 footer a:hover {
-  color: #fff;
+  color: var(--text-color);
 }
 
 footer small {

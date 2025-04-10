@@ -4,141 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        :root {
-            --bg-color: #121212;
-            --text-color: #ffffff;
-            --accent: #c38c43;
-            --glass: rgba(255, 255, 255, 0.08);
-            --tile-bg: #1e1e1e;
-            --tile-border: #333333;
-            --transition-speed: 0.3s;
-        }
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-        }
-        header, main, footer {
-            background-color: var(--bg-color); /* Ensure all sections use the background color */
-        }
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-            background-color: var(--tile-bg);
-            border-bottom: 1px solid var(--tile-border);
-        }
-        header .logo {
-            display: flex;
-            align-items: center;
-        }
-        header .logo img {
-            height: 40px;
-            margin-right: 0.5rem;
-        }
-        header nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 1rem;
-            font-size: 1rem;
-            transition: color var(--transition-speed);
-        }
-        header nav a:hover, header nav a.active {
-            color: var(--accent);
-        }
-        main {
-            text-align: center;
-            padding: 2rem;
-        }
-        main h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-        main p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #cccccc;
-        }
-        #projects-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 2rem;
-        }
-        .project-card {
-            background-color: var(--tile-bg);
-            color: var(--text-color);
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 1px solid var(--tile-border);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            text-align: center;
-        }
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-        }
-        .project-card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 1rem;
-        }
-        .project-card video {
-            width: 100%;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-        }
-        .project-card p {
-            font-size: 1rem;
-            color: #cccccc;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: var(--tile-bg);
-            color: var(--text-color);
-            border-top: 1px solid var(--tile-border);
-        }
-        footer div a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin: 0 0.5rem;
-        }
-        footer div a:hover {
-            color: var(--accent);
-        }
-        @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                text-align: center;
-            }
-            header nav a {
-                margin: 0.5rem 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <a href="/">
-                <img src="images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
-                <span class="logo-text"><strong>RAAHTECH</strong></span>
-            </a>
-        </div>
-        <nav aria-label="Main Navigation">
-            <a href="/">Home</a>
-            <a href="/about">About Us</a>
-            <a href="/founder">Founder</a>
-            <a href="/projects" class="active">Projects</a>
-            <a href="/services">Services</a>
-            <a href="/contact">Contact</a>
-        </nav>
+        <script>
+            fetch('/partials/header.html')
+                .then(res => res.text())
+                .then(data => document.querySelector('header').innerHTML = data);
+        </script>
     </header>
 
     <section class="hero">
@@ -147,9 +21,7 @@
     </section>
 
     <main>
-        <h1 data-aos="fade-up">Project Highlights</h1>
-        <p data-aos="fade-up" data-aos-delay="100">Explore some of the key projects we have worked on.</p>
-        <section id="projects-container" data-aos="fade-up" data-aos-delay="200">
+        <section id="projects-container">
             <div class="project-card">
                 <h2>LoadLink</h2>
                 <video controls preload="auto" poster="https://raahtech.blob.core.windows.net/raahtechsite/Images/LOADLINK_ICON/a45eafc7-e250-4052-8a61-caacaa5e04aa.png">
@@ -170,12 +42,11 @@
     </main>
 
     <footer>
-        <div>
-            <a href="/contact">Contact</a> |
-            <a href="/privacy">Privacy</a> |
-            <a href="/terms">Terms</a>
-        </div>
-        <small>Built by <a href="https://rechardk.github.io/portfolio" target="_blank">Rechard Keith</a></small>
+        <script>
+            fetch('/partials/footer.html')
+                .then(res => res.text())
+                .then(data => document.querySelector('footer').innerHTML = data);
+        </script>
     </footer>
     <script src="/script.js"></script>
 </body>
