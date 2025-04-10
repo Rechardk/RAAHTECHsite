@@ -64,7 +64,7 @@
     <script>
         async function fetchProjects() {
             try {
-                const response = await fetch('/');
+                const response = await fetch('/api/projects'); // Updated endpoint
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
                 }
