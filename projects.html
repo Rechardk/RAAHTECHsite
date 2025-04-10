@@ -22,7 +22,7 @@
         }
         .project-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
         .project-card h2 {
             margin-bottom: 0.5rem;
@@ -65,6 +65,9 @@
         async function fetchProjects() {
             try {
                 const response = await fetch('/');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const projects = await response.json();
                 const container = document.getElementById('projects-container');
                 projects.forEach(project => {
@@ -78,6 +81,7 @@
                 });
             } catch (error) {
                 console.error('Error fetching projects:', error);
+                document.getElementById('projects-container').innerHTML = `<p>Unable to load projects. Please try again later.</p>`;
             }
         }
         fetchProjects();

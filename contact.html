@@ -52,12 +52,16 @@
         async function fetchContactInfo() {
             try {
                 const response = await fetch('/');
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
                 const data = await response.json();
                 document.getElementById('email').innerHTML = `Email: <a href="mailto:${data.email}">${data.email}</a>`;
                 document.getElementById('phone').innerHTML = `Phone: <a href="tel:${data.phone}">${data.phone}</a>`;
                 document.getElementById('address').innerHTML = `Address: ${data.address}`;
             } catch (error) {
                 console.error('Error fetching contact info:', error);
+                document.getElementById('contact-info').innerHTML = `<p>Unable to load contact information. Please try again later.</p>`;
             }
         }
         fetchContactInfo();
@@ -85,6 +89,12 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        #inquiry-form input:focus, #inquiry-form textarea:focus {
+            border-color: var(--accent, #c38c43);
+            box-shadow: 0 0 5px rgba(195, 140, 67, 0.5);
+            outline: none;
         }
         #inquiry-form button {
             padding: 0.8rem 1.5rem;
@@ -98,6 +108,9 @@
         }
         #inquiry-form button:hover {
             background-color: #a06d33;
+        }
+        section {
+            margin-bottom: 2rem; /* Add spacing between sections */
         }
     </style>
     <footer>
