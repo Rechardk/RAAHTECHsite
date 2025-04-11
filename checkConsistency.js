@@ -22,4 +22,6 @@ function checkHTMLConsistency(dir) {
     });
 }
 
+// Consider adding more checks (e.g., against required meta tags, or consistent AOS attributes).
+
 checkHTMLConsistency(directory);

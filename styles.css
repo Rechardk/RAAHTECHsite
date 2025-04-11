@@ -4,8 +4,6 @@
     --black: #000;
     --dark-gray: #111;
     --hover-glow: rgba(255, 215, 0, 0.7); /* Increased opacity for better visibility */
-    --color-primary: #5A0FC8;
-    --color-accent: #E91E63;
     --btn-radius: 10px;
     --section-padding: 4rem 2rem;
     --bg-color: var(--black);
