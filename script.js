@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('RAAHTECH site loaded successfully.');
 
-    fetch("/partials/header.html")
+    // Inject Header and Footer
+    fetch('/partials/header.html')
         .then(res => res.text())
-        .then(data => document.querySelector("header").innerHTML = data)
-        .catch(err => console.error("Error loading header:", err));
+        .then(data => document.querySelector('header').innerHTML = data)
+        .catch(err => console.error('Error loading header:', err));
 
-    fetch("/partials/footer.html")
+    fetch('/partials/footer.html')
         .then(res => res.text())
-        .then(data => document.querySelector("footer").innerHTML = data)
-        .catch(err => console.error("Error loading footer:", err));
+        .then(data => document.querySelector('footer').innerHTML = data)
+        .catch(err => console.error('Error loading footer:', err));
 
     // Dark Mode Toggle
     const toggle = document.createElement('button');
@@ -28,6 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.add('dark-mode');
         toggle.innerText = '☀️';
     }
+
+    // Initialize AOS Animations
+    AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true,
+    });
 });
 
 // Smooth scroll for buttons
@@ -54,10 +62,3 @@ setInterval(() => {
         carousel.scrollBy({ left: 1, behavior: 'smooth' });
     }
 }, 30);
-
-// Initialize AOS Animations
-AOS.init({
-    duration: 800,
-    easing: 'ease-in-out',
-    once: true,
-});

@@ -1,38 +1,98 @@
-/* General */
+/* Root Variables */
+:root {
+    --font-main: 'Poppins', sans-serif;
+    --gold: #FFD700;
+    --black: #000;
+    --dark-gray: #111;
+    --hover-glow: rgba(255, 215, 0, 0.7);
+    --text-color: #fff;
+    --bg-color: var(--black);
+    --accent-color: var(--gold);
+    --btn-radius: 10px;
+    --section-padding: 4rem 2rem;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    --bg-color: #111;
+    --text-color: #ddd;
+    --hover-glow: rgba(255, 215, 0, 0.5);
+    --accent-color: #FFD700;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Global Styles */
 body {
-    background-color: #000;
-    color: #fff;
-    font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
     scroll-behavior: smooth;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header */
-.site-header {
-    background-color: rgba(0, 0, 0, 0.9);
-    padding: 1rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+header {
+    background-color: var(--dark-gray);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-.navbar .nav-link {
-    color: gold;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--gold);
     text-decoration: none;
-    margin: 0 1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
+    font-size: 1rem;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover {
-    color: orange;
-    transform: scale(1.1);
+.nav-links a:hover {
+    color: var(--text-color);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--gold);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 /* Hero Section */
 .hero {
     text-align: center;
     padding: 5rem 1rem;
-    background: radial-gradient(circle, #000, #333);
+    background: radial-gradient(circle, var(--bg-color), #333);
 }
 
 .hero-logo {
@@ -43,7 +103,7 @@ body {
 
 .hero-motto {
     font-size: 2rem;
-    color: gold;
+    color: var(--accent-color);
     margin-bottom: 2rem;
 }
 
@@ -54,8 +114,8 @@ body {
 /* Glassy Buttons */
 .btn.glassy {
     background: rgba(255, 255, 255, 0.2);
-    border: 1px solid gold;
-    color: gold;
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     text-decoration: none;
@@ -63,9 +123,9 @@ body {
 }
 
 .btn.glassy:hover {
-    background: gold;
-    color: black;
-    box-shadow: 0 0 10px gold;
+    background: var(--accent-color);
+    color: var(--black);
+    box-shadow: 0 0 10px var(--accent-color);
 }
 
 /* Contact Form */
@@ -83,9 +143,9 @@ body {
     width: 100%;
     margin-bottom: 1rem;
     padding: 0.5rem;
-    border: 1px solid gold;
+    border: 1px solid var(--accent-color);
     background: rgba(255, 255, 255, 0.1);
-    color: #fff;
+    color: var(--text-color);
 }
 
 .contact-form button {
@@ -94,11 +154,11 @@ body {
 
 /* Footer */
 footer {
-    background-color: rgba(0, 0, 0, 0.9);
-    color: gold;
+    background-color: var(--dark-gray);
+    color: var(--gold);
     text-align: center;
     padding: 2rem 1rem;
-    border-top: 2px solid gold;
+    border-top: 2px solid var(--gold);
 }
 
 .footer-content {
@@ -116,14 +176,31 @@ footer {
 }
 
 .social-links a {
-    color: gold;
+    color: var(--gold);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: orange;
+    color: var(--text-color);
+}
+
+/* Buttons */
+.cta-button, button {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--btn-radius);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover, button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px var(--hover-glow);
 }
 
 /* Animations */
@@ -133,6 +210,17 @@ footer {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
@@ -164,14 +252,14 @@ button, input, textarea {
 
 /* Rebalanced Layout */
 .section {
-    padding: 5rem 2rem;
+    padding: var(--section-padding);
     max-width: 1200px;
     margin: 0 auto;
 }
 
 /* Typography and Colors */
 h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--font-main);
     color: var(--gold);
 }
 
@@ -204,6 +292,20 @@ p {
     }
 
     p {
+        font-size: 1rem;
+    }
+
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cta-button {
+        padding: 10px 20px;
         font-size: 1rem;
     }
 }

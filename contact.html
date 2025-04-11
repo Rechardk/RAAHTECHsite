@@ -65,15 +65,7 @@
     </style>
 </head>
 <body>
-    <header id="header-placeholder">
-        <script>
-            fetch('/partials/header.html')
-                .then(res => res.text())
-                .then(data => {
-                    document.getElementById('header-placeholder').innerHTML = data;
-                });
-        </script>
-    </header>
+    <header id="header-placeholder"></header>
     <main>
         <section class="contact-section" data-aos="fade-up">
             <h1 class="contact-title">Get in Touch</h1>
@@ -88,18 +80,11 @@
             </form>
         </section>
     </main>
-    <footer id="footer-placeholder">
-        <script>
-            fetch('/partials/footer.html')
-                .then(res => res.text())
-                .then(data => {
-                    document.getElementById('footer-placeholder').innerHTML = data;
-                });
-        </script>
-    </footer>
+    <footer id="footer-placeholder"></footer>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
     </script>
+    <script src="/script.js"></script>
 </body>
 </html>
