@@ -1,42 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RAAHTECH | Future-Ready Solutions</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RAAHTECH - Innovating the Future with AI Solutions, Consulting, and Logistics Technology.">
+  <meta name="keywords" content="AI Solutions, Consulting, CRM, Logistics Tech, VoterSphere, LoadLink">
+  <meta name="author" content="RAAHTECH">
+  <meta name="robots" content="index, follow">
+  <title>RAAHTECH</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <script>
-        fetch('/partials/header.html')
-            .then(res => res.text())
-            .then(data => document.querySelector('header').innerHTML = data);
-    </script>
+  <header class="hero-section">
+    <h1 class="brand-title">RAAHTECH</h1>
+    <p class="tagline">Innovating the Future</p>
+    <p class="animated-brand">Empowering Innovation with Technology</p>
+    <button class="cta-button">Start Your Project</button>
   </header>
 
-  <section class="hero">
-    <h1>Innovate. Automate. Dominate.</h1>
-    <p>Empowering businesses with cutting-edge technology.</p>
-    <a href="#services" class="button">Explore Services</a>
-  </section>
-
-  <section id="about" class="about">
-    <h2>About Us</h2>
-    <p>At RAAHTECH, we deliver scalable and secure solutions tailored to your needs.</p>
-  </section>
-
-  <section id="services" class="services">
+  <section class="services">
     <h2>Our Services</h2>
-    <p>From AI-driven automation to SaaS solutions, we redefine possibilities.</p>
+    <div class="service-list">
+      <div class="service-item">
+        <h3>AI Solutions</h3>
+        <p>Custom AI models to transform your business.</p>
+      </div>
+      <div class="service-item">
+        <h3>Consulting</h3>
+        <p>Expert guidance for your digital transformation.</p>
+      </div>
+      <div class="service-item">
+        <h3>CRM</h3>
+        <p>Streamlined customer relationship management tools.</p>
+      </div>
+      <div class="service-item">
+        <h3>Logistics Tech</h3>
+        <p>Innovative solutions for supply chain optimization.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2>Product Spotlights</h2>
+    <div class="product-list">
+      <div class="product-item">
+        <h3>VoterSphere</h3>
+        <iframe src="https://www.youtube.com/embed/example1" title="VoterSphere Demo"></iframe>
+      </div>
+      <div class="product-item">
+        <h3>LoadLink</h3>
+        <iframe src="https://www.youtube.com/embed/example2" title="LoadLink Demo"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>What Our Clients Say</h2>
+    <div class="carousel">
+      <div class="testimonial-item">
+        <p>"RAAHTECH transformed our business!"</p>
+        <span>- Client A</span>
+      </div>
+      <div class="testimonial-item">
+        <p>"Exceptional service and support."</p>
+        <span>- Client B</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Ready to Transform Your Business?</h2>
+    <button class="cta-button">Book a Consultation</button>
+  </section>
+
+  <section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Subscribe to our newsletter for the latest updates and insights.</p>
+    <form action="/subscribe" method="POST">
+      <input type="email" name="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 
   <footer>
-    <script>
-        fetch('/partials/footer.html')
-            .then(res => res.text())
-            .then(data => document.querySelector('footer').innerHTML = data);
-    </script>
+    <p>&copy; 2023 RAAHTECH. All rights reserved.</p>
+    <a href="https://personal-portfolio.com" target="_blank">Visit My Portfolio</a>
+    <div class="contact">
+      <p>Email: contact@raahtech.com</p>
+      <p>Phone: +1-800-123-4567</p>
+    </div>
+    <div class="social-links">
+      <a href="https://twitter.com/raahtech" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/company/raahtech" target="_blank">LinkedIn</a>
+    </div>
   </footer>
+  <script src="script.js"></script>
 </body>
 </html>

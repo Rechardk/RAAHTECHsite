@@ -58,3 +58,21 @@ document.querySelectorAll("nav a[href^='#']").forEach(anchor => {
         }
     });
 });
+
+// Smooth scroll for CTA button
+document.querySelector('.cta-button').addEventListener('click', () => {
+    document.querySelector('.services').scrollIntoView({ behavior: 'smooth' });
+});
+
+// Carousel auto-scroll
+const carousel = document.querySelector('.carousel');
+let isScrolling = false;
+
+carousel.addEventListener('mouseenter', () => (isScrolling = false));
+carousel.addEventListener('mouseleave', () => (isScrolling = true));
+
+setInterval(() => {
+    if (isScrolling) {
+        carousel.scrollBy({ left: 1, behavior: 'smooth' });
+    }
+}, 30);

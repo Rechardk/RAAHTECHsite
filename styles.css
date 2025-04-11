@@ -1,0 +1,223 @@
+:root {
+    --font-main: 'Poppins', sans-serif;
+    --gold: #FFD700;
+    --black: #000;
+    --dark-gray: #111;
+    --hover-glow: rgba(255, 215, 0, 0.5);
+    --color-primary: #5A0FC8;
+    --color-accent: #E91E63;
+    --btn-radius: 10px;
+    --section-padding: 4rem 2rem;
+    --bg-color: var(--black);
+    --text-color: #fff;
+    --header-bg: var(--dark-gray);
+    --footer-bg: var(--dark-gray);
+    --accent-color: var(--gold);
+}
+
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: var(--header-bg);
+    color: var(--text-color);
+    padding: 1rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-links a:hover {
+    color: var(--accent-color);
+}
+
+footer .social-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+footer {
+    text-align: center;
+    border-top: 2px solid var(--accent-color);
+}
+
+footer a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+
+footer a:hover {
+    color: var(--text-color);
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 50px;
+    background: linear-gradient(135deg, var(--black), var(--dark-gray));
+    color: var(--gold);
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.brand-title {
+    font-size: 3rem;
+    color: var(--gold);
+}
+
+.tagline {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* Buttons */
+.cta-button, button {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 15px 30px;
+    border: none;
+    border-radius: var(--btn-radius);
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-button:hover, button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px var(--hover-glow);
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 30px;
+    background-color: var(--dark-gray);
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+    height: 8px;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+    background-color: var(--gold);
+    border-radius: 10px;
+}
+
+/* Newsletter */
+.newsletter {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--dark-gray);
+    color: var(--gold);
+    border-top: 2px solid var(--gold);
+}
+
+.newsletter input[type="email"] {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.newsletter button {
+    background-color: var(--gold);
+    color: var(--black);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter button:hover {
+    background-color: var(--hover-glow);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+}

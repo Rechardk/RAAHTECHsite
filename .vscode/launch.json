@@ -19,11 +19,7 @@
             "url": "http://localhost:8080",
             "webRoot": "${workspaceFolder}"
         },
-        {
-            "type": "chrome",
-            "request": "launch",
-            "name": "Open services.html",
-            "file": "c:\\Users\\Recha\\OneDrive\\Documents\\GitHub\\RAAHTECHsite\\services.html"
-        }
+
+        
     ]
 }
