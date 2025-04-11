@@ -306,6 +306,21 @@ html {
     display: block;
 }
 
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .responsive-logo {
+        max-width: 120px;
+    }
+
+    .media-video {
+        max-width: 300px;
+    }
+
+    .product-icon {
+        max-width: 120px;
+    }
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {
@@ -352,4 +367,26 @@ html {
     section {
         padding: 2rem 1rem;
     }
+}
+
+/* Layout and Spacing */
+.projects-layout, .services-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card, .service-card {
+    background-color: var(--dark-gray);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--hover-glow);
+    text-align: center;
+}
+
+.project-card:hover, .service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--hover-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
