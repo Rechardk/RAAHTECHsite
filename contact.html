@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
     <style>
         :root {
             --bg-color: #0f0f0f;
@@ -65,7 +65,15 @@
     </style>
 </head>
 <body>
-    <header id="header-placeholder"></header>
+    <header id="header-placeholder">
+        <script>
+            fetch('/partials/header.html')
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('header-placeholder').innerHTML = data;
+                });
+        </script>
+    </header>
     <main>
         <section class="contact-section" data-aos="fade-up">
             <h1 class="contact-title">Get in Touch</h1>
@@ -80,14 +88,18 @@
             </form>
         </section>
     </main>
-    <footer id="footer-placeholder"></footer>
+    <footer id="footer-placeholder">
+        <script>
+            fetch('/partials/footer.html')
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('footer-placeholder').innerHTML = data;
+                });
+        </script>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
-        // Inject header and footer
-        document.getElementById('header-placeholder').innerHTML = '<!-- Include header.html content dynamically -->';
-        document.getElementById('footer-placeholder').innerHTML = '<!-- Include footer.html content dynamically -->';
     </script>
 </body>
 </html>
-``` 
