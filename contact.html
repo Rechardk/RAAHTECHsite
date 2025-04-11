@@ -21,10 +21,10 @@
             color: var(--text-color);
             line-height: 1.6;
         }
-        #contact-info, #inquiry-form {
+        .contact-section {
             background-color: var(--tile-bg);
             color: var(--text-color);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: 8px;
             border: 1px solid var(--tile-border);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -32,12 +32,16 @@
             margin: 2rem auto;
             text-align: center;
         }
-        form label {
+        .contact-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-form label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: bold;
         }
-        form input, form textarea {
+        .contact-form input, .contact-form textarea {
             width: 100%;
             padding: 0.5rem;
             margin-bottom: 1rem;
@@ -46,7 +50,7 @@
             background-color: var(--glass);
             color: var(--text-color);
         }
-        form button {
+        .contact-form button {
             background-color: var(--accent);
             color: var(--text-color);
             padding: 0.75rem 1.5rem;
@@ -55,74 +59,35 @@
             cursor: pointer;
             transition: background-color var(--transition-speed);
         }
-        form button:hover {
+        .contact-form button:hover {
             background-color: #a67536;
         }
     </style>
 </head>
 <body>
-    <header>
-        <script>
-            fetch('/partials/header.html')
-                .then(res => res.text())
-                .then(data => document.querySelector('header').innerHTML = data);
-        </script>
-    </header>
-
-    <section class="hero">
-        <h1>Contact Us</h1>
-        <p>We'd love to hear from you. Get in touch with us today!</p>
-    </section>
-
+    <header id="header-placeholder"></header>
     <main>
-        <section id="contact-info" data-aos="fade-up" data-aos-delay="200">
-            <h2>Our Contact Details</h2>
-            <p id="email">Email: <span>Loading...</span></p>
-            <p id="phone">Phone: <span>Loading...</span></p>
-            <p id="address">Address: <span>Loading...</span></p>
-        </section>
-        <section id="inquiry-form" data-aos="fade-up" data-aos-delay="300">
-            <h2>Send Us an Inquiry</h2>
-            <form action="/submit-inquiry" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Submit</button>
+        <section class="contact-section" data-aos="fade-up">
+            <h1 class="contact-title">Get in Touch</h1>
+            <form class="contact-form">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn glassy">Send Message</button>
             </form>
         </section>
     </main>
-
-    <footer>
-        <script>
-            fetch('/partials/footer.html')
-                .then(res => res.text())
-                .then(data => document.querySelector('footer').innerHTML = data);
-        </script>
-    </footer>
-    <script src="/script.js"></script>
+    <footer id="footer-placeholder"></footer>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
-        async function fetchContactInfo() {
-            try {
-                const response = await fetch('/api/contact-info');
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-                const data = await response.json();
-                document.getElementById('email').innerHTML = `Email: <a href="mailto:${data.email}">${data.email}</a>`;
-                document.getElementById('phone').innerHTML = `Phone: <a href="tel:${data.phone}">${data.phone}</a>`;
-                document.getElementById('address').innerHTML = `Address: ${data.address}`;
-            } catch (error) {
-                console.error('Error fetching contact info:', error);
-                document.getElementById('contact-info').innerHTML = `<p>Unable to load contact information. Please try again later.</p>`;
-            }
-        }
-        fetchContactInfo();
+        AOS.init();
+        // Inject header and footer
+        document.getElementById('header-placeholder').innerHTML = '<!-- Include header.html content dynamically -->';
+        document.getElementById('footer-placeholder').innerHTML = '<!-- Include footer.html content dynamically -->';
     </script>
 </body>
 </html>
+``` 

@@ -11,17 +11,22 @@
   <link rel="stylesheet" href="styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="icon" href="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" type="image/png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
-  <header>
-    <script>
-      fetch('/partials/header.html')
-        .then(res => res.text())
-        .then(data => document.querySelector('header').innerHTML = data);
-    </script>
-  </header>
-
+  <header id="header-placeholder"></header>
   <main>
+    <section class="hero" data-aos="fade-up">
+      <div class="hero-content">
+        <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo" class="hero-logo">
+        <h1 class="hero-motto">Innovating the Future</h1>
+        <div class="hero-buttons">
+          <a href="#services" class="btn glassy">Our Services</a>
+          <a href="#contact" class="btn glassy">Contact Us</a>
+        </div>
+      </div>
+    </section>
+
     <section id="services" class="services">
       <h2>Our Services</h2>
       <div class="service-list">
@@ -78,13 +83,13 @@
       </div>
     </section>
   </main>
-
-  <footer>
-    <script>
-      fetch('/partials/footer.html')
-        .then(res => res.text())
-        .then(data => document.querySelector('footer').innerHTML = data);
-    </script>
-  </footer>
+  <footer id="footer-placeholder"></footer>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    // Inject header and footer
+    document.getElementById('header-placeholder').innerHTML = '<!-- Include header.html content dynamically -->';
+    document.getElementById('footer-placeholder').innerHTML = '<!-- Include footer.html content dynamically -->';
+  </script>
 </body>
 </html>

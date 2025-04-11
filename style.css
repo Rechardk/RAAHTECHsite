@@ -1,0 +1,102 @@
+/* General */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+/* Header */
+.site-header {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .nav-link {
+    color: gold;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+    color: orange;
+    transform: scale(1.1);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    background: radial-gradient(circle, #000, #333);
+}
+
+.hero-logo {
+    max-width: 150px;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.hero-motto {
+    font-size: 2rem;
+    color: gold;
+    margin-bottom: 2rem;
+}
+
+.hero-buttons .btn {
+    margin: 0.5rem;
+}
+
+/* Glassy Buttons */
+.btn.glassy {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid gold;
+    color: gold;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn.glassy:hover {
+    background: gold;
+    color: black;
+    box-shadow: 0 0 10px gold;
+}
+
+/* Contact Form */
+.contact-section {
+    padding: 2rem;
+    text-align: center;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid gold;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.contact-form button {
+    width: 100%;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
