@@ -15,4 +15,3 @@ Thumbs.db
 # Build artifacts
 dist/
 *.cache
-style.css

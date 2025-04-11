@@ -36,10 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
         toggle.innerText = '☀️';
     }
 
-    // Initialize AOS Animations
+    // Initialize AOS Animations with updated configuration for smoother effects
     AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
+        duration: 600, // Reduced animation duration for a snappier feel
+        easing: 'ease-out',
         once: true,
     });
 });

@@ -1,15 +1,12 @@
 /* Root Variables */
 :root {
     --font-main: 'Poppins', sans-serif;
-    --gold: #FFD700;
-    --black: #000;
-    --dark-gray: #111;
-    --hover-glow: rgba(255, 215, 0, 0.7);
-    --text-color: #fff;
-    --bg-color: var(--black);
-    --accent-color: var(--gold);
-    --btn-radius: 10px;
-    --section-padding: 4rem 2rem;
+    --accent-color: #FFD700;
+    --bg-color: #0D0D0D;
+    --text-color: #FFFFFF;
+    --btn-radius: 5px;
+    --section-padding: 2rem 1rem;
+    --hover-glow: rgba(255, 215, 0, 0.3);
 }
 
 /* Dark Mode */
@@ -35,8 +32,9 @@ body {
 
 /* Header */
 header {
-    background-color: var(--dark-gray);
+    background-color: var(--bg-color);
     padding: 1rem 2rem;
+    border-bottom: 1px solid var(--accent-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
@@ -59,7 +57,7 @@ header {
 }
 
 .nav-links a {
-    color: var(--gold);
+    color: var(--accent-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -79,7 +77,7 @@ header {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--gold);
+    background-color: var(--accent-color);
     transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -91,8 +89,9 @@ header {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 5rem 1rem;
-    background: radial-gradient(circle, var(--bg-color), #333);
+    padding: 4rem 1rem;
+    background: var(--bg-color);
+    animation: fadeIn 1s ease-out;
 }
 
 .hero-logo {
@@ -124,8 +123,24 @@ header {
 
 .btn.glassy:hover {
     background: var(--accent-color);
-    color: var(--black);
+    color: var(--bg-color);
     box-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Minimal buttons */
+.cta-button, button {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: var(--btn-radius);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.cta-button:hover, button:hover {
+    transform: scale(1.05);
 }
 
 /* Contact Form */
@@ -154,11 +169,11 @@ header {
 
 /* Footer */
 footer {
-    background-color: var(--dark-gray);
-    color: var(--gold);
+    background-color: var(--bg-color);
+    color: var(--accent-color);
     text-align: center;
     padding: 2rem 1rem;
-    border-top: 2px solid var(--gold);
+    border-top: 2px solid var(--accent-color);
 }
 
 .footer-content {
@@ -176,7 +191,7 @@ footer {
 }
 
 .social-links a {
-    color: var(--gold);
+    color: var(--accent-color);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
@@ -186,21 +201,17 @@ footer {
     color: var(--text-color);
 }
 
-/* Buttons */
-.cta-button, button {
-    background-color: var(--gold);
-    color: var(--black);
-    padding: 15px 30px;
-    border: none;
-    border-radius: var(--btn-radius);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/* Minimal cards for projects and services */
+.project-card, .service-card {
+    background-color: var(--bg-color);
+    padding: 1.5rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.cta-button:hover, button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px var(--hover-glow);
+.project-card:hover, .service-card:hover {
+    transform: scale(1.02);
 }
 
 /* Animations */
@@ -216,7 +227,7 @@ footer {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -229,8 +240,8 @@ footer {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background-color: var(--gold);
-    color: var(--black);
+    background-color: var(--accent-color);
+    color: var(--bg-color);
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -260,7 +271,7 @@ button, input, textarea {
 /* Typography and Colors */
 h1, h2, h3 {
     font-family: var(--font-main);
-    color: var(--gold);
+    color: var(--accent-color);
 }
 
 p {

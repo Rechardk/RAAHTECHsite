@@ -1,16 +1,11 @@
 :root {
     --font-main: 'Poppins', sans-serif;
-    --gold: #FFD700;
-    --black: #000;
-    --dark-gray: #111;
-    --hover-glow: rgba(255, 215, 0, 0.7); /* Increased opacity for better visibility */
-    --btn-radius: 10px;
-    --section-padding: 4rem 2rem;
-    --bg-color: var(--black);
-    --text-color: #fff;
-    --header-bg: var(--dark-gray);
-    --footer-bg: var(--dark-gray);
-    --accent-color: var(--gold);
+    --primary-color: #FFD700; /* Matching logo gold */
+    --bg-color: #121212;
+    --text-color: #EEEEEE;
+    --btn-radius: 5px;
+    --section-padding: 2rem 1rem;
+    --hover-glow: rgba(255, 215, 0, 0.3);
 }
 
 /* Global Styles */
@@ -19,13 +14,14 @@ body {
     font-family: var(--font-main);
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 /* Header Styles */
 header {
-    background-color: var(--dark-gray);
+    background-color: var(--bg-color);
     padding: 1rem 2rem;
+    border-bottom: 1px solid var(--primary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -44,11 +40,11 @@ header {
 }
 
 .nav-links a {
-    color: var(--gold);
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
-    transition: color 0.3s ease;
+    transition: color 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -57,11 +53,11 @@ header {
 
 /* Footer Styles */
 footer {
-    background-color: var(--dark-gray);
-    color: var(--gold);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
     text-align: center;
-    padding: 2rem 1rem;
-    border-top: 2px solid var(--gold);
+    padding: 1rem;
+    border-top: 1px solid var(--primary-color);
 }
 
 .footer-content {
@@ -79,7 +75,7 @@ footer {
 }
 
 .social-links a {
-    color: var(--gold);
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 1rem;
     transition: color 0.3s ease;
@@ -93,8 +89,8 @@ footer {
 .hero-section {
     text-align: center;
     padding: 80px 20px;
-    background: linear-gradient(135deg, var(--black), var(--dark-gray));
-    color: var(--gold);
+    background: linear-gradient(135deg, var(--bg-color), var(--bg-color));
+    color: var(--primary-color);
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -111,7 +107,7 @@ footer {
 /* Service Section */
 .services {
     padding: var(--section-padding);
-    background-color: var(--dark-gray);
+    background-color: var(--bg-color);
     color: var(--text-color);
     text-align: center;
 }
@@ -124,7 +120,7 @@ footer {
 }
 
 .service-item {
-    background-color: var(--black);
+    background-color: var(--bg-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--hover-glow);
@@ -139,8 +135,8 @@ footer {
 /* Product Section */
 .products {
     padding: var(--section-padding);
-    background-color: var(--black);
-    color: var(--gold);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
     text-align: center;
 }
 
@@ -152,7 +148,7 @@ footer {
 }
 
 .product-item iframe {
-    border: 2px solid var(--gold);
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     width: 100%;
     max-width: 400px;
@@ -161,8 +157,8 @@ footer {
 
 /* Buttons */
 .cta-button, button {
-    background-color: var(--gold);
-    color: var(--black);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
     padding: 15px 30px;
     border: none;
     border-radius: var(--btn-radius);
@@ -184,7 +180,7 @@ html {
 /* Testimonials Section */
 .testimonials {
     padding: var(--section-padding);
-    background-color: var(--dark-gray);
+    background-color: var(--bg-color);
     color: var(--text-color);
     text-align: center;
 }
@@ -202,12 +198,12 @@ html {
 }
 
 .carousel::-webkit-scrollbar-thumb {
-    background-color: var(--gold);
+    background-color: var(--primary-color);
     border-radius: 10px;
 }
 
 .testimonial-item {
-    background-color: var(--black);
+    background-color: var(--bg-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--hover-glow);
@@ -219,22 +215,22 @@ html {
 .newsletter {
     text-align: center;
     padding: 40px;
-    background-color: var(--dark-gray);
-    color: var(--gold);
-    border-top: 2px solid var(--gold);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+    border-top: 1px solid var(--primary-color);
 }
 
 .newsletter input[type="email"] {
     padding: 10px;
     width: 300px;
-    border: 1px solid var(--gold);
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
     margin-right: 10px;
 }
 
 .newsletter button {
-    background-color: var(--gold);
-    color: var(--black);
+    background-color: var(--primary-color);
+    color: var(--bg-color);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -250,8 +246,8 @@ html {
 .media {
     text-align: center;
     padding: 40px;
-    background-color: var(--dark-gray);
-    color: var(--gold);
+    background-color: var(--bg-color);
+    color: var(--primary-color);
 }
 
 .media-gallery {
@@ -263,7 +259,7 @@ html {
 
 .media-item {
     max-width: 300px;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--hover-glow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -278,7 +274,7 @@ html {
     width: 100%;
     max-width: 400px;
     height: auto;
-    border: 2px solid var(--gold);
+    border: 2px solid var(--primary-color);
     border-radius: 10px;
     box-shadow: 0 0 10px var(--hover-glow);
 }
@@ -363,7 +359,7 @@ html {
 }
 
 .project-card, .service-card {
-    background-color: var(--dark-gray);
+    background-color: var(--bg-color);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px var(--hover-glow);
