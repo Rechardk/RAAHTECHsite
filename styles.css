@@ -186,6 +186,34 @@ footer a:hover {
     background-color: var(--hover-glow);
 }
 
+/* Media Section */
+.media {
+    text-align: center;
+    padding: 40px;
+    background-color: var(--dark-gray);
+    color: var(--gold);
+}
+
+.media-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.media-item {
+    max-width: 300px;
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--hover-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.media-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--hover-glow);
+}
+
 /* Animations */
 @keyframes fadeIn {
     from {

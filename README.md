@@ -44,6 +44,20 @@ Welcome to the RAAHTECH website repository. This project showcases RAAHTECH's se
 - **JavaScript**: Interactive features.
 - **AOS Library**: Scroll animations.
 
+## Adding Media
+
+Place your media files in the `assets/images` or `assets/videos` directory. Use the following formats:
+- **Images**: `.jpg`, `.png`, `.svg`
+- **Videos**: `.mp4`, `.webm`
+
+Example usage in HTML:
+```html
+<img src="assets/images/example.jpg" alt="Example Image">
+<video controls>
+  <source src="assets/videos/example.mp4" type="video/mp4">
+</video>
+```
+
 ## Contributing
 
 Feel free to fork the repository and submit pull requests. Contributions are welcome!
