@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
         observer.observe(card);
     });
+<<<<<<< HEAD
 
     // Enhanced smooth scroll for all anchor links
     document.querySelectorAll('a[href^="#"], a[href^="/"]').forEach(anchor => {
@@ -92,6 +93,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { threshold: 0.1 });
         observer.observe(section);
     });
+=======
+>>>>>>> 4dff8672a5e691a25124e7f59613b343359d2853
 });
 
 // Smooth scroll for buttons
