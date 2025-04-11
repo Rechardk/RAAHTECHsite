@@ -13,24 +13,12 @@
   <link rel="icon" href="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" type="image/png">
 </head>
 <body>
-  <header class="hero-section">
-    <nav class="navbar">
-      <a href="#" class="logo">
-        <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
-      </a>
-      <ul class="nav-links">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="hero-content">
-      <h1 class="brand-title">RAAHTECH</h1>
-      <p class="tagline">Innovating the Future</p>
-      <p class="animated-brand">Empowering Innovation with Technology</p>
-      <button class="cta-button">Start Your Project</button>
-    </div>
+  <header>
+    <script>
+      fetch('/partials/header.html')
+        .then(res => res.text())
+        .then(data => document.querySelector('header').innerHTML = data);
+    </script>
   </header>
 
   <main>
@@ -89,18 +77,12 @@
     </section>
   </main>
 
-  <footer id="contact">
-    <div class="footer-content">
-      <p>&copy; 2023 RAAHTECH. All rights reserved.</p>
-      <div class="contact">
-        <p>Email: <a href="mailto:contact@raahtech.com">contact@raahtech.com</a></p>
-        <p>Phone: <a href="tel:+18001234567">+1-800-123-4567</a></p>
-      </div>
-      <div class="social-links">
-        <a href="https://twitter.com/raahtech" target="_blank">Twitter</a>
-        <a href="https://linkedin.com/company/raahtech" target="_blank">LinkedIn</a>
-      </div>
-    </div>
+  <footer>
+    <script>
+      fetch('/partials/footer.html')
+        .then(res => res.text())
+        .then(data => document.querySelector('footer').innerHTML = data);
+    </script>
   </footer>
 </body>
 </html>
