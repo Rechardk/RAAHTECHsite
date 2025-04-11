@@ -8,3 +8,17 @@
         </ul>
     </div>
 </footer>
+<script>
+    fetch('/partials/footer.html')
+        .then(res => {
+            if (!res.ok) throw new Error('Failed to load footer');
+            return res.text();
+        })
+        .then(data => {
+            document.querySelector('footer').innerHTML = data;
+        })
+        .catch(err => {
+            console.error(err);
+            document.querySelector('footer').innerHTML = '<p>Footer could not be loaded.</p>';
+        });
+</script>

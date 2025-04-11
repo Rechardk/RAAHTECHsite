@@ -14,7 +14,22 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
 </head>
 <body>
-  <header id="header-placeholder"></header>
+  <header id="header-placeholder">
+    <script>
+      fetch('/partials/header.html')
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to load header');
+          return res.text();
+        })
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById('header-placeholder').innerHTML = '<p>Header could not be loaded.</p>';
+        });
+    </script>
+  </header>
   <main>
     <section class="hero" data-aos="fade-up">
       <div class="hero-content">
@@ -83,13 +98,25 @@
       </div>
     </section>
   </main>
-  <footer id="footer-placeholder"></footer>
+  <footer id="footer-placeholder">
+    <script>
+      fetch('/partials/footer.html')
+        .then(res => {
+          if (!res.ok) throw new Error('Failed to load footer');
+          return res.text();
+        })
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById('footer-placeholder').innerHTML = '<p>Footer could not be loaded.</p>';
+        });
+    </script>
+  </footer>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init();
-    // Inject header and footer
-    document.getElementById('header-placeholder').innerHTML = '<!-- Include header.html content dynamically -->';
-    document.getElementById('footer-placeholder').innerHTML = '<!-- Include footer.html content dynamically -->';
   </script>
 </body>
 </html>
