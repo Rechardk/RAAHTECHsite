@@ -20,12 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
     toggle.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
         toggle.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌑';
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
     });
+
+    // Load dark mode preference
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+        toggle.innerText = '☀️';
+    }
 });
 
 // Smooth scroll for buttons
-document.querySelector('.cta-button').addEventListener('click', () => {
-    document.querySelector('.services').scrollIntoView({ behavior: 'smooth' });
+document.querySelectorAll('.cta-button').forEach(button => {
+    button.addEventListener('click', () => {
+        const target = document.querySelector('.services');
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
+        } else {
+            console.error('Target element for smooth scroll not found.');
+        }
+    });
 });
 
 // Placeholder for carousel animations
