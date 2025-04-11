@@ -17,4 +17,13 @@ document.querySelector('.cta-button').addEventListener('click', () => {
 
 // Placeholder for carousel animations
 const carousel = document.querySelector('.carousel');
-// Add motion-enhanced effects here
+let isScrolling = false;
+
+carousel.addEventListener('mouseenter', () => (isScrolling = false));
+carousel.addEventListener('mouseleave', () => (isScrolling = true));
+
+setInterval(() => {
+    if (isScrolling) {
+        carousel.scrollBy({ left: 1, behavior: 'smooth' });
+    }
+}, 30);

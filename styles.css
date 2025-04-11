@@ -133,6 +133,11 @@ footer a:hover {
     box-shadow: 0 0 20px var(--hover-glow);
 }
 
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
 /* Testimonials */
 .testimonials {
     padding: 30px;
