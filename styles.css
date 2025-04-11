@@ -83,14 +83,21 @@ footer .social-links {
 }
 
 footer {
+    padding: 40px 20px;
+    background-color: var(--footer-bg);
+    color: var(--gold);
     text-align: center;
-    border-top: 2px solid var(--accent-color);
+}
+
+footer .contact, footer .social-links {
+    margin: 10px 0;
 }
 
 footer a {
-    color: var(--accent-color);
+    color: var(--gold);
     text-decoration: none;
-    margin: 0 0.5rem;
+    margin: 0 10px;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
@@ -100,20 +107,71 @@ footer a:hover {
 /* Hero Section */
 .hero-section {
     text-align: center;
-    padding: 50px;
+    padding: 80px 20px;
     background: linear-gradient(135deg, var(--black), var(--dark-gray));
     color: var(--gold);
     animation: fadeIn 1.5s ease-in-out;
 }
 
 .brand-title {
-    font-size: 3rem;
-    color: var(--gold);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
 }
 
 .tagline {
-    font-size: 1.5rem;
-    margin: 10px 0;
+    font-size: 1.8rem;
+    margin: 15px 0;
+}
+
+/* Service Section */
+.services {
+    padding: var(--section-padding);
+    background-color: var(--dark-gray);
+    color: var(--text-color);
+    text-align: center;
+}
+
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.service-item {
+    background-color: var(--black);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--hover-glow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px var(--hover-glow);
+}
+
+/* Product Section */
+.products {
+    padding: var(--section-padding);
+    background-color: var(--black);
+    color: var(--gold);
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-item iframe {
+    border: 2px solid var(--gold);
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    height: 250px;
 }
 
 /* Buttons */
@@ -138,10 +196,12 @@ html {
     scroll-behavior: smooth;
 }
 
-/* Testimonials */
+/* Testimonials Section */
 .testimonials {
-    padding: 30px;
+    padding: var(--section-padding);
     background-color: var(--dark-gray);
+    color: var(--text-color);
+    text-align: center;
 }
 
 .carousel {
@@ -149,6 +209,7 @@ html {
     overflow-x: auto;
     gap: 20px;
     scroll-behavior: smooth;
+    padding: 20px 0;
 }
 
 .carousel::-webkit-scrollbar {
@@ -158,6 +219,15 @@ html {
 .carousel::-webkit-scrollbar-thumb {
     background-color: var(--gold);
     border-radius: 10px;
+}
+
+.testimonial-item {
+    background-color: var(--black);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--hover-glow);
+    min-width: 300px;
+    flex: 0 0 auto;
 }
 
 /* Newsletter */
@@ -242,12 +312,24 @@ html {
         gap: 0.5rem;
     }
 
-    .hero-section h1 {
-        font-size: 2rem;
+    .hero-section {
+        padding: 60px 15px;
     }
 
-    .hero-section p {
-        font-size: 1rem;
+    .brand-title {
+        font-size: 2.5rem;
+    }
+
+    .tagline {
+        font-size: 1.2rem;
+    }
+
+    .service-list, .product-list {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel {
+        flex-direction: column;
     }
 
     section {
