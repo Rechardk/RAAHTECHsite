@@ -3,11 +3,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetch("/partials/header.html")
         .then(res => res.text())
-        .then(data => document.querySelector("header").innerHTML = data);
+        .then(data => document.querySelector("header").innerHTML = data)
+        .catch(err => console.error("Error loading header:", err));
 
     fetch("/partials/footer.html")
         .then(res => res.text())
-        .then(data => document.querySelector("footer").innerHTML = data);
+        .then(data => document.querySelector("footer").innerHTML = data)
+        .catch(err => console.error("Error loading footer:", err));
 });
 
 // Smooth scroll for buttons
