@@ -15,7 +15,7 @@
 <body>
     <header>
         <script>
-            fetch('/partials/header.html')
+            fetch('partials/header.html')
                 .then(res => {
                     if (!res.ok) throw new Error('Failed to load header');
                     return res.text();
@@ -74,7 +74,7 @@
 
     <footer>
         <script>
-            fetch('/partials/footer.html')
+            fetch('partials/footer.html')
                 .then(res => {
                     if (!res.ok) throw new Error('Failed to load footer');
                     return res.text();
