@@ -100,6 +100,11 @@ header {
     animation: fadeIn 1s ease-out;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Make it full height */
 }
 
 .hero::before {
@@ -112,6 +117,11 @@ header {
     background: linear-gradient(120deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.3));
     z-index: -1;
     animation: animatedGradient 5s infinite alternate;
+}
+
+.hero-content {
+    width: 100%;
+    padding: 2rem;
 }
 
 @keyframes animatedGradient {
@@ -172,79 +182,21 @@ header {
     transform: scale(1.05);
 }
 
-/* Contact Form */
-.contact-section {
-    padding: 2rem;
-    text-align: center;
+/* Services Section Reorganization */
+.services {
+    padding: 4rem 2rem;
 }
 
-.contact-form {
-    max-width: 500px;
-    margin: 0 auto;
+.service-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
 }
 
-.contact-form input, .contact-form textarea {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid var(--accent-color);
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--text-color);
-}
-
-.contact-form button {
-    width: 100%;
-}
-
-/* Footer */
-footer {
-    background-color: var(--bg-color);
-    color: var(--accent-color);
-    text-align: center;
-    padding: 2rem 1rem;
-    border-top: 2px solid var(--accent-color);
-}
-
-.footer-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.social-links {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin: 1rem 0 0;
-    padding: 0;
-}
-
-.social-links a {
-    color: var(--accent-color);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-    color: var(--text-color);
-}
-
-/* Minimal cards for projects and services */
-.project-card, .service-card {
-    background-color: var(--bg-color);
-    padding: 1.5rem;
-    border: 1px solid var(--accent-color);
-    border-radius: 5px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-card:hover, .service-card:hover {
-    transform: scale(1.02);
-}
-
-/* Service Cards Glow Effect */
 .service-item {
+    padding: 25px;
+    border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -252,7 +204,23 @@ footer {
     box-shadow: 0 0 20px var(--hover-glow);
 }
 
-/* Product Spotlights Tilt Effect */
+/* Product Spotlights Adjustment */
+.products {
+    padding: 4rem 2rem;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around; /* Distribute items evenly */
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.product-item {
+    width: calc(50% - 15px); /* Two items per row */
+    text-align: center;
+}
+
 .product-item video {
     transition: transform 0.3s ease;
 }
@@ -266,6 +234,38 @@ footer {
     background-image: url('https://raahtech.blob.core.windows.net/raahtechsite/Images/parallax-bg.jpg'); /* Replace with your image URL */
     background-attachment: fixed;
     background-size: cover;
+    background-position: center;
+    padding: 4rem 2rem;
+}
+
+.carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 2rem 0;
+}
+
+.testimonial-item {
+    min-width: 400px;
+    padding: 25px;
+    border-radius: 15px;
+    scroll-snap-align: start;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     background-position: center;
 }
 
