@@ -8,6 +8,12 @@
     --btn-radius: 8px;
     --section-padding: 3rem 2rem;
     --hover-glow: rgba(255, 215, 0, 0.4);
+    --accent-glow: rgba(255, 215, 0, 0.4);
+    --card-bg: rgba(30, 30, 30, 0.95);
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 8px;
 }
 
 /* Dark Mode */
@@ -276,6 +282,32 @@ header {
     }
 }
 
+@keyframes glow {
+    0% { box-shadow: 0 0 5px var(--accent-glow); }
+    50% { box-shadow: 0 0 20px var(--accent-glow); }
+    100% { box-shadow: 0 0 5px var(--accent-glow); }
+}
+
+/* Card Styles */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    animation: glow 2s infinite;
+}
+
+/* Grid System */
+.grid {
+    display: grid;
+    gap: var(--spacing-md);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
 /* Dark Mode Toggle */
 .dark-mode-toggle {
     position: fixed;
@@ -330,6 +362,10 @@ main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    :root {
+        --spacing-lg: 1.5rem;
+    }
+
     .responsive-logo {
         max-width: 120px;
     }
@@ -337,6 +373,7 @@ main {
     .hero {
         height: auto; /* Adjust height for smaller screens */
         padding: 5rem 2rem;
+        min-height: 60vh;
     }
 
     .hero-content {
@@ -407,6 +444,22 @@ main {
     .testimonial-item {
         min-width: 100%; /* Full width testimonials */
     }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1025px) {
+    .grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 /* Larger Screens */
@@ -422,4 +475,12 @@ main {
     .product-item {
         width: calc(33% - 20px); /* Three items per row */
     }
+}
+
+/* Base Layout */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
 }
