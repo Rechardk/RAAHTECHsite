@@ -2,10 +2,11 @@
 body {
     background-color: #000;
     color: #fff;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     scroll-behavior: smooth;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Header */
@@ -91,6 +92,40 @@ body {
     width: 100%;
 }
 
+/* Footer */
+footer {
+    background-color: rgba(0, 0, 0, 0.9);
+    color: gold;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 2px solid gold;
+}
+
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0 0;
+    padding: 0;
+}
+
+.social-links a {
+    color: gold;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: orange;
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% {
@@ -98,5 +133,77 @@ body {
     }
     50% {
         transform: translateY(-10px);
+    }
+}
+
+/* Dark Mode Toggle */
+.dark-mode-toggle {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background-color: var(--gold);
+    color: var(--black);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dark-mode-toggle:hover {
+    background-color: var(--hover-glow);
+    transform: scale(1.1);
+}
+
+/* Smooth Transitions */
+button, input, textarea {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Rebalanced Layout */
+.section {
+    padding: 5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Typography and Colors */
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--gold);
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .responsive-logo {
+        max-width: 120px;
+    }
+
+    .hero-motto {
+        font-size: 1.5rem;
+    }
+
+    .btn.glassy {
+        padding: 0.4rem 0.8rem;
+    }
+
+    .section {
+        padding: 3rem 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1rem;
     }
 }

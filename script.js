@@ -10,6 +10,17 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(res => res.text())
         .then(data => document.querySelector("footer").innerHTML = data)
         .catch(err => console.error("Error loading footer:", err));
+
+    // Dark Mode Toggle
+    const toggle = document.createElement('button');
+    toggle.className = 'dark-mode-toggle';
+    toggle.innerText = '🌑';
+    document.body.appendChild(toggle);
+
+    toggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+        toggle.innerText = document.body.classList.contains('dark-mode') ? '☀️' : '🌑';
+    });
 });
 
 // Smooth scroll for buttons
@@ -29,3 +40,10 @@ setInterval(() => {
         carousel.scrollBy({ left: 1, behavior: 'smooth' });
     }
 }, 30);
+
+// Initialize AOS Animations
+AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+});

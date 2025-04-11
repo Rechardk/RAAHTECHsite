@@ -17,4 +17,25 @@
         max-width: 150px;
         height: auto;
     }
+
+    .nav-link {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 0;
+        height: 2px;
+        background-color: var(--gold);
+        transition: width 0.3s ease, left 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 100%;
+        left: 0;
+    }
 </style>
