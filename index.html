@@ -9,74 +9,100 @@
   <meta name="robots" content="index, follow">
   <title>RAAHTECH</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" type="image/png">
 </head>
 <body>
   <header class="hero-section">
-    <h1 class="brand-title">RAAHTECH</h1>
-    <p class="tagline">Innovating the Future</p>
-    <p class="animated-brand">Empowering Innovation with Technology</p>
-    <button class="cta-button">Start Your Project</button>
+    <nav class="navbar">
+      <a href="#" class="logo">
+        <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo">
+      </a>
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1 class="brand-title">RAAHTECH</h1>
+      <p class="tagline">Innovating the Future</p>
+      <p class="animated-brand">Empowering Innovation with Technology</p>
+      <button class="cta-button">Start Your Project</button>
+    </div>
   </header>
 
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-list">
-      <div class="service-item">
-        <h3>AI Solutions</h3>
-        <p>Custom AI models to transform your business.</p>
+  <main>
+    <section id="services" class="services">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-item">
+          <h3>AI Solutions</h3>
+          <p>Custom AI models to transform your business.</p>
+        </div>
+        <div class="service-item">
+          <h3>Consulting</h3>
+          <p>Expert guidance for your digital transformation.</p>
+        </div>
+        <div class="service-item">
+          <h3>CRM</h3>
+          <p>Streamlined customer relationship management tools.</p>
+        </div>
+        <div class="service-item">
+          <h3>Logistics Tech</h3>
+          <p>Innovative solutions for supply chain optimization.</p>
+        </div>
       </div>
-      <div class="service-item">
-        <h3>Consulting</h3>
-        <p>Expert guidance for your digital transformation.</p>
-      </div>
-      <div class="service-item">
-        <h3>CRM</h3>
-        <p>Streamlined customer relationship management tools.</p>
-      </div>
-      <div class="service-item">
-        <h3>Logistics Tech</h3>
-        <p>Innovative solutions for supply chain optimization.</p>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="products">
-    <h2>Product Spotlights</h2>
-    <div class="product-list">
-      <div class="product-item">
-        <h3>VoterSphere</h3>
-        <iframe src="https://www.youtube.com/embed/example1" title="VoterSphere Demo"></iframe>
+    <section id="products" class="products">
+      <h2>Product Spotlights</h2>
+      <div class="product-list">
+        <div class="product-item">
+          <h3>VoterSphere</h3>
+          <video controls>
+            <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-480%20VoteSphere.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+        <div class="product-item">
+          <h3>LoadLink</h3>
+          <video controls>
+            <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-1080%20LoadLink.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/LOADLINK_ICON/a45eafc7-e250-4052-8a61-caacaa5e04aa.png" alt="LoadLink Icon" class="product-icon">
+        </div>
       </div>
-      <div class="product-item">
-        <h3>LoadLink</h3>
-        <iframe src="https://www.youtube.com/embed/example2" title="LoadLink Demo"></iframe>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="testimonials">
-    <h2>What Our Clients Say</h2>
-    <div class="carousel">
-      <div class="testimonial-item">
-        <p>"RAAHTECH transformed our business!"</p>
-        <span>- Client A</span>
+    <section id="testimonials" class="testimonials">
+      <h2>What Our Clients Say</h2>
+      <div class="carousel">
+        <div class="testimonial-item">
+          <p>"RAAHTECH transformed our business!"</p>
+          <span>- Client A</span>
+        </div>
+        <div class="testimonial-item">
+          <p>"Exceptional service and support."</p>
+          <span>- Client B</span>
+        </div>
       </div>
-      <div class="testimonial-item">
-        <p>"Exceptional service and support."</p>
-        <span>- Client B</span>
-      </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <footer>
-    <p>&copy; 2023 RAAHTECH. All rights reserved.</p>
-    <div class="contact">
-      <p>Email: contact@raahtech.com</p>
-      <p>Phone: +1-800-123-4567</p>
-    </div>
-    <div class="social-links">
-      <a href="https://twitter.com/raahtech" target="_blank">Twitter</a>
-      <a href="https://linkedin.com/company/raahtech" target="_blank">LinkedIn</a>
+  <footer id="contact">
+    <div class="footer-content">
+      <p>&copy; 2023 RAAHTECH. All rights reserved.</p>
+      <div class="contact">
+        <p>Email: <a href="mailto:contact@raahtech.com">contact@raahtech.com</a></p>
+        <p>Phone: <a href="tel:+18001234567">+1-800-123-4567</a></p>
+      </div>
+      <div class="social-links">
+        <a href="https://twitter.com/raahtech" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/company/raahtech" target="_blank">LinkedIn</a>
+      </div>
     </div>
   </footer>
 </body>
