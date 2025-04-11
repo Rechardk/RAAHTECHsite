@@ -1,12 +1,13 @@
 /* Root Variables */
 :root {
     --font-main: 'Poppins', sans-serif;
-    --accent-color: #FFD700;
-    --bg-color: #0D0D0D;
-    --text-color: #FFFFFF;
-    --btn-radius: 5px;
-    --section-padding: 2rem 1rem;
-    --hover-glow: rgba(255, 215, 0, 0.3);
+    --primary-color: #FFD700; /* Gold */
+    --secondary-color: #1E90FF; /* Dodger Blue */
+    --bg-color: #121212;
+    --text-color: #EEEEEE;
+    --btn-radius: 8px;
+    --section-padding: 3rem 2rem;
+    --hover-glow: rgba(255, 215, 0, 0.4);
 }
 
 /* Dark Mode */
@@ -14,7 +15,7 @@ body.dark-mode {
     --bg-color: #111;
     --text-color: #ddd;
     --hover-glow: rgba(255, 215, 0, 0.5);
-    --accent-color: #FFD700;
+    --primary-color: #FFD700;
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -34,7 +35,7 @@ body {
 header {
     background-color: var(--bg-color);
     padding: 1rem 2rem;
-    border-bottom: 1px solid var(--accent-color);
+    border-bottom: 1px solid var(--primary-color);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
@@ -63,7 +64,7 @@ header {
 }
 
 .nav-links a {
-    color: var(--accent-color);
+    color: var(--primary-color);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
@@ -83,7 +84,7 @@ header {
     left: 50%;
     width: 0;
     height: 2px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     transition: width 0.3s ease, left 0.3s ease;
 }
 
@@ -141,7 +142,7 @@ header {
 
 .hero-motto {
     font-size: 2rem;
-    color: var(--accent-color);
+    color: var(--primary-color);
     margin-bottom: 2rem;
 }
 
@@ -152,8 +153,8 @@ header {
 /* Glassy Buttons */
 .btn.glassy {
     background: rgba(255, 255, 255, 0.2);
-    border: 1px solid var(--accent-color);
-    color: var(--accent-color);
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     text-decoration: none;
@@ -161,14 +162,14 @@ header {
 }
 
 .btn.glassy:hover {
-    background: var(--accent-color);
+    background: var(--primary-color);
     color: var(--bg-color);
-    box-shadow: 0 0 10px var(--accent-color);
+    box-shadow: 0 0 10px var(--primary-color);
 }
 
 /* Minimal buttons */
 .cta-button, button {
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: var(--bg-color);
     padding: 0.75rem 1.5rem;
     border: none;
@@ -198,6 +199,7 @@ header {
     padding: 25px;
     border-radius: 15px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 1s ease-out;
 }
 
 .service-item:hover {
@@ -219,6 +221,7 @@ header {
 .product-item {
     width: calc(50% - 15px); /* Two items per row */
     text-align: center;
+    animation: fadeIn 1.2s ease-out;
 }
 
 .product-item video {
@@ -265,7 +268,7 @@ header {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -278,7 +281,7 @@ header {
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     color: var(--bg-color);
     border: none;
     border-radius: 50%;
@@ -309,7 +312,7 @@ button, input, textarea {
 /* Typography and Colors */
 h1, h2, h3 {
     font-family: var(--font-main);
-    color: var(--accent-color);
+    color: var(--primary-color);
 }
 
 p {
@@ -329,6 +332,15 @@ main {
 @media (max-width: 768px) {
     .responsive-logo {
         max-width: 120px;
+    }
+
+    .hero {
+        height: auto; /* Adjust height for smaller screens */
+        padding: 5rem 2rem;
+    }
+
+    .hero-content {
+        padding: 1rem;
     }
 
     .hero-motto {
@@ -376,5 +388,38 @@ main {
 
     main {
         padding: 1rem 0.5rem;
+    }
+
+    .service-list {
+        grid-template-columns: 1fr; /* Single column for mobile */
+        gap: 20px;
+    }
+
+    .product-list {
+        flex-direction: column; /* Stack product items */
+        align-items: center;
+    }
+
+    .product-item {
+        width: 100%; /* Full width on mobile */
+    }
+
+    .testimonial-item {
+        min-width: 100%; /* Full width testimonials */
+    }
+}
+
+/* Larger Screens */
+@media (min-width: 1200px) {
+    .hero {
+        padding: 10rem 4rem;
+    }
+
+    .service-list {
+        grid-template-columns: repeat(3, 1fr); /* Three columns on larger screens */
+    }
+
+    .product-item {
+        width: calc(33% - 20px); /* Three items per row */
     }
 }
