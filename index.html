@@ -15,20 +15,6 @@
 </head>
 <body>
   <header id="header-placeholder">
-    <script>
-      fetch('/partials/header.html')
-        .then(res => {
-          if (!res.ok) throw new Error('Failed to load header');
-          return res.text();
-        })
-        .then(data => {
-          document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById('header-placeholder').innerHTML = '<p>Header could not be loaded.</p>';
-        });
-    </script>
   </header>
   <main>
     <section class="hero" data-aos="fade-up">
@@ -99,20 +85,6 @@
     </section>
   </main>
   <footer id="footer-placeholder">
-    <script>
-      fetch('/partials/footer.html')
-        .then(res => {
-          if (!res.ok) throw new Error('Failed to load footer');
-          return res.text();
-        })
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(err => {
-          console.error(err);
-          document.getElementById('footer-placeholder').innerHTML = '<p>Footer could not be loaded.</p>';
-        });
-    </script>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script>

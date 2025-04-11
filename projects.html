@@ -7,21 +7,7 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <header>
-        <script>
-            fetch('/partials/header.html')
-                .then(res => {
-                    if (!res.ok) throw new Error('Failed to load header');
-                    return res.text();
-                })
-                .then(data => {
-                    document.querySelector('header').innerHTML = data;
-                })
-                .catch(err => {
-                    console.error(err);
-                    document.querySelector('header').innerHTML = '<p>Header could not be loaded.</p>';
-                });
-        </script>
+    <header id="header-placeholder">
     </header>
 
     <main>
@@ -66,21 +52,7 @@
         </section>
     </main>
 
-    <footer>
-        <script>
-            fetch('/partials/footer.html')
-                .then(res => {
-                    if (!res.ok) throw new Error('Failed to load footer');
-                    return res.text();
-                })
-                .then(data => {
-                    document.querySelector('footer').innerHTML = data;
-                })
-                .catch(err => {
-                    console.error(err);
-                    document.querySelector('footer').innerHTML = '<p>Footer could not be loaded.</p>';
-                });
-        </script>
+    <footer id="footer-placeholder">
     </footer>
     <script src="/script.js"></script>
 </body>
