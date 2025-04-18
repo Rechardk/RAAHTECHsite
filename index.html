@@ -1,101 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="RAAHTECH - Innovating the Future with AI Solutions, Consulting, and Logistics Technology.">
-  <meta name="keywords" content="AI Solutions, Consulting, CRM, Logistics Tech, VoterSphere, LoadLink">
-  <meta name="author" content="RAAHTECH">
-  <meta name="robots" content="index, follow">
-  <title>RAAHTECH</title>
-  <link rel="stylesheet" href="/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="icon" href="/images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RAAHTech | Realign. Reclaim. Rise.</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0e0e0e;
+      color: #f2f2f2;
+      scroll-behavior: smooth;
+    }
+    header {
+      background-color: #000;
+      padding: 1.5rem;
+      text-align: center;
+      border-bottom: 2px solid gold;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header h1 {
+      margin: 0;
+      color: gold;
+      font-size: 2rem;
+    }
+    nav {
+      text-align: center;
+      margin-top: 1rem;
+    }
+    nav a {
+      color: #f2f2f2;
+      margin: 0 1rem;
+      text-decoration: none;
+    }
+    nav a:hover {
+      color: gold;
+    }
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1rem;
+      background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+      animation: fadeIn 2s ease-in;
+      text-align: center;
+    }
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      animation: slideDown 1s ease-out;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      animation: slideUp 1.2s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes slideDown {
+      from { transform: translateY(-20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    .section {
+      padding: 3rem 1rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .section h3 {
+      color: gold;
+      margin-bottom: 1rem;
+    }
+    .card {
+      background-color: #1c1c1c;
+      border: 1px solid #333;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-radius: 8px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    .project-icon {
+      height: 60px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+    video {
+      width: 100%;
+      max-width: 960px;
+      margin: 2rem auto;
+      display: block;
+      border: 2px solid gold;
+      border-radius: 10px;
+    }
+    footer {
+      background-color: #000;
+      text-align: center;
+      padding: 2rem;
+      border-top: 2px solid gold;
+      font-size: 0.9rem;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.75rem;
+      border-radius: 4px;
+      border: none;
+      font-size: 1rem;
+    }
+    .contact-form button {
+      background-color: gold;
+      color: #000;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <header id="header-placeholder">
+  <header>
+    <h1>RAAHTech</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
-  <main>
-    <section class="hero" data-aos="fade-up">
-      <div class="hero-content">
-        <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/RAAH_logo_transparent.jpg" alt="RAAHTECH Logo" class="hero-logo responsive-logo">
-        <h1 class="hero-motto">Innovating the Future</h1>
-        <div class="hero-buttons">
-          <a href="/services" class="btn glassy">Our Services</a>
-          <a href="/contact" class="btn glassy">Contact Us</a>
-        </div>
-      </div>
-    </section>
 
-    <section id="services" class="services">
-      <h2>Our Services</h2>
-      <div class="service-list">
-        <div class="service-item">
-          <h3>AI Solutions</h3>
-          <p>Custom AI models to transform your business.</p>
-        </div>
-        <div class="service-item">
-          <h3>Consulting</h3>
-          <p>Expert guidance for your digital transformation.</p>
-        </div>
-        <div class="service-item">
-          <h3>CRM</h3>
-          <p>Streamlined customer relationship management tools.</p>
-        </div>
-        <div class="service-item">
-          <h3>Logistics Tech</h3>
-          <p>Innovative solutions for supply chain optimization.</p>
-        </div>
-      </div>
-    </section>
+  <section class="hero">
+    <h2>Innovating Tomorrow’s Infrastructure – Today</h2>
+    <p>AI Systems | Civic Tech | Freight Logistics | Strategic Consulting</p>
+  </section>
 
-    <section id="products" class="products">
-      <h2>Product Spotlights</h2>
-      <div class="product-list">
-        <div class="product-item">
-          <h3>VoterSphere</h3>
-          <video controls poster="https://raahtech.blob.core.windows.net/raahtechsite/Images/Votersphere/Votespherelogo.png" class="media-video">
-            <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-480%20VoteSphere.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        <div class="product-item">
-          <h3>LoadLink</h3>
-          <video controls poster="https://raahtech.blob.core.windows.net/raahtechsite/Images/LOADLINK_ICON/a45eafc7-e250-4052-8a61-caacaa5e04aa.png" class="media-video">
-            <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-1080%20LoadLink.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </div>
-    </section>
+  <section id="about" class="section">
+    <h3>About Us</h3>
+    <p>RAAH Technologies is a future-forward firm driving innovation in AI, digital logistics, and civic empowerment. We partner with visionary leaders and organizations to transform ideas into infrastructure.</p>
+  </section>
 
-    <section id="cta" class="cta-section">
-        <h2>Ready to Transform Your Business?</h2>
-        <p>Contact us today to learn how RAAHTECH can help you achieve your goals.</p>
-        <a href="/contact" class="btn glassy">Get Started</a>
-    </section>
+  <section id="services" class="section">
+    <h3>Our Services</h3>
+    <div class="card">
+      <strong>AI Infrastructure & Custom GPT Models</strong><br />
+      Deployable solutions across Azure, AWS, and on-prem environments.
+    </div>
+    <div class="card">
+      <strong>Logistics & Freight Platforms</strong><br />
+      End-to-end digital freight systems like LoadLink.
+    </div>
+    <div class="card">
+      <strong>Civic Technology</strong><br />
+      Engagement tools like VoterSphere to modernize democracy.
+    </div>
+    <div class="card">
+      <strong>Strategic Consulting</strong><br />
+      Advisory for startups, government, and mid-sized enterprises in tech innovation.
+    </div>
+  </section>
 
-    <section id="testimonials" class="testimonials parallax">
-      <h2>What Our Clients Say</h2>
-      <div class="carousel">
-        <div class="testimonial-item">
-          <p>"RAAHTECH transformed our business!"</p>
-          <span>- Client A</span>
-        </div>
-        <div class="testimonial-item">
-          <p>"Exceptional service and support."</p>
-          <span>- Client B</span>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer id="footer-placeholder">
+  <section id="projects" class="section">
+    <h3>Highlighted Projects</h3>
+    <div class="card">
+      <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/LOADLINK_ICON/a45eafc7-e250-4052-8a61-caacaa5e04aa.png" class="project-icon" alt="LoadLink Icon">
+      <strong>LoadLink</strong> – Revolutionizing how independent drivers and freight providers connect.
+    </div>
+    <video controls>
+      <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-1080%20LoadLink.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="card">
+      <img src="https://raahtech.blob.core.windows.net/raahtechsite/Images/Votersphere/Votespherelogo.png" class="project-icon" alt="VoterSphere Logo">
+      <strong>VoterSphere</strong> – Gamified civic engagement meets scalable digital infrastructure.
+    </div>
+    <video controls>
+      <source src="https://raahtech.blob.core.windows.net/raahtechsite/Videos/invideo-ai-480%20VoteSphere.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div class="card">
+      <strong>RA-AI / RACHAT</strong> – AI core and conversational tools tailored for vertical markets.
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <h3>Contact Us</h3>
+    <form class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>Email: <a href="mailto:admin@raahtech.org" style="color:gold">admin@raahtech.org</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 RAAH Technologies. All rights reserved.<br />
+    Built for clarity. Powered by vision.
   </footer>
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
-  <script src="/script.js"></script>
 </body>
 </html>
